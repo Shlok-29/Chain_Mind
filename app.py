@@ -107,9 +107,9 @@ with st.sidebar:
     st.divider()
     st.markdown("### 🤖 Agent Configuration")
 
-    use_llm = st.toggle("Use Real LLM (OpenAI)", value=False)
+    use_llm = st.toggle("Use Real LLM (OpenAI)", value=bool(os.environ.get("OPENAI_API_KEY")))
     if use_llm:
-        api_key = st.text_input("OpenAI API Key", type="password", placeholder="sk-...")
+        api_key = st.text_input("OpenAI API Key", type="password", placeholder="sk-...", value=os.environ.get("OPENAI_API_KEY", ""))
     else:
         api_key = None
         st.info("Running in **Simulation Mode**. Toggle above to use real GPT.")
