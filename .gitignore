@@ -1,0 +1,20 @@
+# Environment variables
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# IDEs and OS files
+.vscode/
+.idea/
+.DS_Store
+*.swp
+
+# Project-specific data (optional, remove if you want to track synthetic data)
+# data/

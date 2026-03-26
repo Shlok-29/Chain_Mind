@@ -1,0 +1,97 @@
+industry,sku,product_name,supplier,reliability_score,avg_lead_days,unit_cost,min_order_qty,is_preferred,has_disruption,disruption_reason,disruption_days
+Pharma,PH001,Paracetamol 500mg,MediChem Pvt Ltd,0.84,9,11.22,200,True,False,,0
+Pharma,PH001,Paracetamol 500mg,PharmaSynth India,0.84,11,11.89,100,False,False,,0
+Pharma,PH001,Paracetamol 500mg,GlobalMed Suppliers,0.74,5,13.38,100,False,False,,0
+Pharma,PH001,Paracetamol 500mg,Cipla Bulk,0.93,11,12.59,500,False,False,,0
+Pharma,PH002,Amoxicillin 250mg,MediChem Pvt Ltd,0.99,12,51.42,50,True,False,,0
+Pharma,PH002,Amoxicillin 250mg,PharmaSynth India,0.75,12,49.15,200,False,False,,0
+Pharma,PH002,Amoxicillin 250mg,GlobalMed Suppliers,0.84,15,40.54,200,False,True,Raw material shortage,11
+Pharma,PH002,Amoxicillin 250mg,Cipla Bulk,0.96,12,49.97,100,False,False,,0
+Pharma,PH003,Insulin Glargine,MediChem Pvt Ltd,0.93,12,398.9,500,True,True,Supplier delay due to heavy rainfall,4
+Pharma,PH003,Insulin Glargine,PharmaSynth India,0.96,16,364.75,100,False,False,,0
+Pharma,PH003,Insulin Glargine,GlobalMed Suppliers,0.98,13,411.53,50,False,False,,0
+Pharma,PH003,Insulin Glargine,Cipla Bulk,0.86,14,354.2,500,False,False,,0
+Pharma,PH004,Azithromycin 500mg,MediChem Pvt Ltd,0.76,12,96.99,100,True,False,,0
+Pharma,PH004,Azithromycin 500mg,PharmaSynth India,0.83,11,85.81,500,False,False,,0
+Pharma,PH004,Azithromycin 500mg,GlobalMed Suppliers,0.78,11,76.95,100,False,True,Truck driver strike,3
+Pharma,PH004,Azithromycin 500mg,Cipla Bulk,0.89,9,77.93,50,False,True,Customs clearance delay,4
+Pharma,PH005,Cetirizine 10mg,MediChem Pvt Ltd,0.8,10,17.16,100,True,False,,0
+Pharma,PH005,Cetirizine 10mg,PharmaSynth India,0.96,10,17.29,500,False,False,,0
+Pharma,PH005,Cetirizine 10mg,GlobalMed Suppliers,0.77,4,19.17,200,False,False,,0
+Pharma,PH005,Cetirizine 10mg,Cipla Bulk,0.85,3,19.23,50,False,False,,0
+Pharma,PH006,Metformin 500mg,MediChem Pvt Ltd,0.92,5,21.17,100,True,True,Flood disruption in supplier region,5
+Pharma,PH006,Metformin 500mg,PharmaSynth India,0.8,7,24.61,50,False,False,,0
+Pharma,PH006,Metformin 500mg,GlobalMed Suppliers,0.95,5,20.08,50,False,False,,0
+Pharma,PH006,Metformin 500mg,Cipla Bulk,0.97,7,20.71,500,False,False,,0
+FMCG,FG001,Surf Excel 1kg,HUL Distribution,0.85,9,101.55,500,True,False,,0
+FMCG,FG001,Surf Excel 1kg,ITC Supply Chain,0.98,4,101.15,200,False,False,,0
+FMCG,FG001,Surf Excel 1kg,Nestle India,0.89,7,87.72,100,False,False,,0
+FMCG,FG001,Surf Excel 1kg,Marico Logistics,0.78,5,89.0,50,False,False,,0
+FMCG,FG002,Maggi Noodles 70g,HUL Distribution,0.85,2,14.19,100,True,False,,0
+FMCG,FG002,Maggi Noodles 70g,ITC Supply Chain,0.82,7,13.45,50,False,False,,0
+FMCG,FG002,Maggi Noodles 70g,Nestle India,0.95,2,15.32,100,False,False,,0
+FMCG,FG002,Maggi Noodles 70g,Marico Logistics,0.98,8,12.78,100,False,True,Port congestion at JNPT Mumbai,10
+FMCG,FG003,Colgate 200g,HUL Distribution,0.85,8,70.53,500,True,True,Factory shutdown for maintenance,11
+FMCG,FG003,Colgate 200g,ITC Supply Chain,0.76,10,62.78,100,False,False,,0
+FMCG,FG003,Colgate 200g,Nestle India,0.79,10,65.51,200,False,False,,0
+FMCG,FG003,Colgate 200g,Marico Logistics,0.91,6,60.01,200,False,False,,0
+FMCG,FG004,Tata Salt 1kg,HUL Distribution,0.74,3,19.16,100,True,False,,0
+FMCG,FG004,Tata Salt 1kg,ITC Supply Chain,0.74,7,19.65,500,False,False,,0
+FMCG,FG004,Tata Salt 1kg,Nestle India,0.78,7,19.95,50,False,False,,0
+FMCG,FG004,Tata Salt 1kg,Marico Logistics,0.93,7,20.38,200,False,False,,0
+FMCG,FG005,Amul Butter 500g,HUL Distribution,0.83,6,294.85,100,True,False,,0
+FMCG,FG005,Amul Butter 500g,ITC Supply Chain,0.79,7,258.57,200,False,False,,0
+FMCG,FG005,Amul Butter 500g,Nestle India,0.94,2,316.39,100,False,False,,0
+FMCG,FG005,Amul Butter 500g,Marico Logistics,0.86,6,298.67,50,False,False,,0
+FMCG,FG006,Lifebuoy Soap 100g,HUL Distribution,0.84,9,28.36,200,True,True,Factory shutdown for maintenance,8
+FMCG,FG006,Lifebuoy Soap 100g,ITC Supply Chain,0.81,8,29.09,500,False,False,,0
+FMCG,FG006,Lifebuoy Soap 100g,Nestle India,0.74,2,32.62,50,False,False,,0
+FMCG,FG006,Lifebuoy Soap 100g,Marico Logistics,0.81,3,32.86,50,False,False,,0
+Auto Parts,AP001,Brake Pads Set,Bosch India,0.98,14,1252.87,100,True,False,,0
+Auto Parts,AP001,Brake Pads Set,Minda Industries,0.9,14,1134.45,500,False,False,,0
+Auto Parts,AP001,Brake Pads Set,Sundram Fasteners,0.85,11,1221.0,500,False,False,,0
+Auto Parts,AP001,Brake Pads Set,Motherson Group,0.9,12,1178.94,500,False,False,,0
+Auto Parts,AP002,Oil Filter,Bosch India,0.98,5,324.39,200,True,False,,0
+Auto Parts,AP002,Oil Filter,Minda Industries,0.75,11,357.19,50,False,False,,0
+Auto Parts,AP002,Oil Filter,Sundram Fasteners,0.87,11,292.34,200,False,False,,0
+Auto Parts,AP002,Oil Filter,Motherson Group,0.85,12,348.8,100,False,False,,0
+Auto Parts,AP003,Spark Plug NGK,Bosch India,0.76,11,181.72,500,True,False,,0
+Auto Parts,AP003,Spark Plug NGK,Minda Industries,0.98,10,193.94,200,False,True,Supplier delay due to heavy rainfall,11
+Auto Parts,AP003,Spark Plug NGK,Sundram Fasteners,0.78,8,182.77,50,False,False,,0
+Auto Parts,AP003,Spark Plug NGK,Motherson Group,0.76,11,184.9,200,False,False,,0
+Auto Parts,AP004,Timing Belt,Bosch India,0.85,20,2402.33,100,True,False,,0
+Auto Parts,AP004,Timing Belt,Minda Industries,0.97,15,2790.02,200,False,False,,0
+Auto Parts,AP004,Timing Belt,Sundram Fasteners,0.95,18,2833.91,200,False,False,,0
+Auto Parts,AP004,Timing Belt,Motherson Group,0.8,17,2773.42,500,False,False,,0
+Auto Parts,AP005,Air Filter,Bosch India,0.84,13,443.83,500,True,False,,0
+Auto Parts,AP005,Air Filter,Minda Industries,0.81,9,515.34,100,False,False,,0
+Auto Parts,AP005,Air Filter,Sundram Fasteners,0.78,12,409.91,500,False,False,,0
+Auto Parts,AP005,Air Filter,Motherson Group,0.94,12,516.2,100,False,False,,0
+Auto Parts,AP006,Clutch Plate,Bosch India,0.73,21,3575.76,500,True,False,,0
+Auto Parts,AP006,Clutch Plate,Minda Industries,0.97,16,3457.96,500,False,True,Raw material shortage,4
+Auto Parts,AP006,Clutch Plate,Sundram Fasteners,0.98,21,3378.61,500,False,False,,0
+Auto Parts,AP006,Clutch Plate,Motherson Group,0.95,22,3643.31,500,False,False,,0
+Retail,RT001,Nike Air Max,Reliance Retail DC,0.92,20,3802.46,500,True,True,Flood disruption in supplier region,8
+Retail,RT001,Nike Air Max,Flipkart B2B,0.75,22,3977.24,50,False,False,,0
+Retail,RT001,Nike Air Max,Metro Cash & Carry,0.97,23,3550.79,50,False,False,,0
+Retail,RT001,Nike Air Max,Amazon B2B India,0.85,25,3522.99,50,False,True,Flood disruption in supplier region,14
+Retail,RT002,Levi's 511 Jeans,Reliance Retail DC,0.74,17,2157.16,100,True,False,,0
+Retail,RT002,Levi's 511 Jeans,Flipkart B2B,0.79,21,2189.5,200,False,True,Flood disruption in supplier region,11
+Retail,RT002,Levi's 511 Jeans,Metro Cash & Carry,0.75,17,2449.04,100,False,False,,0
+Retail,RT002,Levi's 511 Jeans,Amazon B2B India,0.96,22,2166.41,500,False,False,,0
+Retail,RT003,"Samsung 65"" TV",Reliance Retail DC,0.92,28,55368.01,200,True,False,,0
+Retail,RT003,"Samsung 65"" TV",Flipkart B2B,0.76,30,50423.08,50,False,False,,0
+Retail,RT003,"Samsung 65"" TV",Metro Cash & Carry,0.75,28,60661.83,50,False,True,Customs clearance delay,13
+Retail,RT003,"Samsung 65"" TV",Amazon B2B India,0.82,29,61436.27,50,False,True,Quality hold by QA team,12
+Retail,RT004,Apple AirPods Pro,Reliance Retail DC,0.75,21,16896.29,500,True,False,,0
+Retail,RT004,Apple AirPods Pro,Flipkart B2B,0.75,23,16716.98,200,False,False,,0
+Retail,RT004,Apple AirPods Pro,Metro Cash & Carry,0.94,18,18940.48,200,False,False,,0
+Retail,RT004,Apple AirPods Pro,Amazon B2B India,0.79,22,20346.92,200,False,True,Supplier delay due to heavy rainfall,5
+Retail,RT005,Prestige Cooker 5L,Reliance Retail DC,0.87,14,1651.31,50,True,False,,0
+Retail,RT005,Prestige Cooker 5L,Flipkart B2B,0.86,14,1808.92,200,False,True,Raw material shortage,8
+Retail,RT005,Prestige Cooker 5L,Metro Cash & Carry,0.81,9,2017.5,100,False,False,,0
+Retail,RT005,Prestige Cooker 5L,Amazon B2B India,0.89,9,1742.45,500,False,True,Flood disruption in supplier region,12
+Retail,RT006,Woodland Boots,Reliance Retail DC,0.79,14,2761.62,50,True,False,,0
+Retail,RT006,Woodland Boots,Flipkart B2B,0.9,20,2888.85,200,False,False,,0
+Retail,RT006,Woodland Boots,Metro Cash & Carry,0.83,13,2525.38,200,False,True,Truck driver strike,5
+Retail,RT006,Woodland Boots,Amazon B2B India,0.8,14,2525.41,500,False,False,,0
