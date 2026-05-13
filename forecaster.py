@@ -140,5 +140,7 @@ def calculate_reorder_recommendation(
         "order_value": round(order_qty * unit_cost, 2),
         "urgency": urgency,
         "avg_daily_demand": round(avg_daily, 1),
+        "reorder_point": reorder_point,
+        "current_stock": current_stock,
         "trend": forecast.get("trend_label", "→ Stable"),
     }

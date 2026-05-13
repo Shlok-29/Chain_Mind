@@ -1,83 +1,86 @@
 industry,po_number,sku,product_name,supplier,quantity,unit_cost,total_value,order_date,expected_delivery,status,warehouse,auto_generated
-Pharma,PO-PH-31579,PH001,Paracetamol 500mg,Cipla Bulk,1321,12,15852,2026-03-25,2026-04-01,Delivered,Mumbai Central,False
-Pharma,PO-PH-65444,PH001,Paracetamol 500mg,Cipla Bulk,1431,12,17172,2026-03-22,2026-03-29,Delivered,Delhi North,True
-Pharma,PO-PH-81066,PH001,Paracetamol 500mg,MediChem Pvt Ltd,619,12,7428,2026-03-25,2026-04-01,Processing,Chennai South,True
-Pharma,PO-PH-79615,PH001,Paracetamol 500mg,PharmaSynth India,1476,12,17712,2026-03-01,2026-03-08,Processing,Mumbai Central,False
-Pharma,PO-PH-87992,PH001,Paracetamol 500mg,MediChem Pvt Ltd,880,12,10560,2026-04-02,2026-04-09,Delivered,Delhi North,False
-Pharma,PO-PH-91183,PH002,Amoxicillin 250mg,MediChem Pvt Ltd,908,45,40860,2026-03-01,2026-03-11,Delivered,Hyderabad Hub,False
-Pharma,PO-PH-44179,PH002,Amoxicillin 250mg,PharmaSynth India,835,45,37575,2026-03-02,2026-03-12,Delivered,Chennai South,True
-Pharma,PO-PH-94607,PH002,Amoxicillin 250mg,GlobalMed Suppliers,434,45,19530,2026-03-13,2026-03-23,Pending,Hyderabad Hub,True
-Pharma,PO-PH-83792,PH003,Insulin Glargine,MediChem Pvt Ltd,434,380,164920,2026-04-07,2026-04-21,Processing,Mumbai Central,False
-Pharma,PO-PH-55745,PH003,Insulin Glargine,MediChem Pvt Ltd,335,380,127300,2026-03-06,2026-03-20,Delivered,Delhi North,True
-Pharma,PO-PH-95717,PH004,Azithromycin 500mg,MediChem Pvt Ltd,1019,85,86615,2026-03-10,2026-03-18,Processing,Chennai South,False
-Pharma,PO-PH-25129,PH004,Azithromycin 500mg,MediChem Pvt Ltd,675,85,57375,2026-04-01,2026-04-09,Delivered,Delhi North,True
-Pharma,PO-PH-54942,PH004,Azithromycin 500mg,PharmaSynth India,831,85,70635,2026-02-28,2026-03-08,Pending,Chennai South,False
-Pharma,PO-PH-65518,PH005,Cetirizine 10mg,GlobalMed Suppliers,789,18,14202,2026-04-04,2026-04-09,Pending,Mumbai Central,True
-Pharma,PO-PH-31178,PH005,Cetirizine 10mg,Cipla Bulk,1904,18,34272,2026-03-30,2026-04-04,Delivered,Hyderabad Hub,False
-Pharma,PO-PH-29536,PH005,Cetirizine 10mg,MediChem Pvt Ltd,754,18,13572,2026-03-31,2026-04-05,Pending,Chennai South,False
-Pharma,PO-PH-15482,PH005,Cetirizine 10mg,GlobalMed Suppliers,1480,18,26640,2026-03-29,2026-04-03,Delivered,Chennai South,False
-Pharma,PO-PH-42706,PH006,Metformin 500mg,MediChem Pvt Ltd,880,22,19360,2026-03-16,2026-03-22,Pending,Chennai South,False
-Pharma,PO-PH-31299,PH006,Metformin 500mg,PharmaSynth India,766,22,16852,2026-03-12,2026-03-18,Delivered,Hyderabad Hub,True
-FMCG,PO-FM-91439,FG001,Surf Excel 1kg,ITC Supply Chain,1616,95,153520,2026-03-23,2026-03-27,Delivered,Bangalore Hub,True
-FMCG,PO-FM-38569,FG001,Surf Excel 1kg,Marico Logistics,1268,95,120460,2026-02-24,2026-02-28,Processing,Kolkata East,False
-FMCG,PO-FM-25012,FG002,Maggi Noodles 70g,ITC Supply Chain,3487,14,48818,2026-02-28,2026-03-03,Pending,Kolkata East,True
-FMCG,PO-FM-98781,FG002,Maggi Noodles 70g,Marico Logistics,2277,14,31878,2026-04-06,2026-04-09,Processing,Ahmedabad West,False
-FMCG,PO-FM-92213,FG002,Maggi Noodles 70g,ITC Supply Chain,1311,14,18354,2026-03-26,2026-03-29,Processing,Pune DC,False
-FMCG,PO-FM-84177,FG003,Colgate 200g,HUL Distribution,1929,62,119598,2026-02-23,2026-02-28,Delivered,Kolkata East,False
-FMCG,PO-FM-76317,FG003,Colgate 200g,Nestle India,1458,62,90396,2026-02-24,2026-03-01,Delivered,Pune DC,False
-FMCG,PO-FM-57472,FG003,Colgate 200g,Marico Logistics,916,62,56792,2026-03-07,2026-03-12,In Transit,Bangalore Hub,False
-FMCG,PO-FM-45400,FG003,Colgate 200g,Marico Logistics,2677,62,165974,2026-03-05,2026-03-10,Pending,Ahmedabad West,False
-FMCG,PO-FM-21359,FG004,Tata Salt 1kg,Nestle India,4688,20,93760,2026-03-18,2026-03-21,Delivered,Ahmedabad West,True
-FMCG,PO-FM-97580,FG004,Tata Salt 1kg,Marico Logistics,3534,20,70680,2026-03-09,2026-03-12,Processing,Kolkata East,True
-FMCG,PO-FM-37802,FG004,Tata Salt 1kg,Nestle India,1944,20,38880,2026-03-18,2026-03-21,In Transit,Kolkata East,True
-FMCG,PO-FM-82848,FG004,Tata Salt 1kg,HUL Distribution,4072,20,81440,2026-02-28,2026-03-03,Delivered,Bangalore Hub,True
-FMCG,PO-FM-72402,FG005,Amul Butter 500g,Marico Logistics,1637,285,466545,2026-03-07,2026-03-09,Delivered,Ahmedabad West,False
-FMCG,PO-FM-63005,FG005,Amul Butter 500g,ITC Supply Chain,1102,285,314070,2026-04-02,2026-04-04,Delivered,Kolkata East,False
-FMCG,PO-FM-79588,FG005,Amul Butter 500g,Nestle India,1469,285,418665,2026-03-15,2026-03-17,Processing,Ahmedabad West,False
-FMCG,PO-FM-69473,FG005,Amul Butter 500g,Nestle India,1177,285,335445,2026-03-03,2026-03-05,Delivered,Kolkata East,True
-FMCG,PO-FM-25670,FG005,Amul Butter 500g,ITC Supply Chain,894,285,254790,2026-03-31,2026-04-02,Delivered,Bangalore Hub,True
-FMCG,PO-FM-88222,FG006,Lifebuoy Soap 100g,Nestle India,3314,30,99420,2026-03-21,2026-03-25,Processing,Pune DC,False
-FMCG,PO-FM-33519,FG006,Lifebuoy Soap 100g,Nestle India,1831,30,54930,2026-03-20,2026-03-24,Delivered,Pune DC,False
-FMCG,PO-FM-17146,FG006,Lifebuoy Soap 100g,Nestle India,2023,30,60690,2026-03-30,2026-04-03,Delivered,Bangalore Hub,False
-FMCG,PO-FM-85243,FG006,Lifebuoy Soap 100g,Nestle India,1320,30,39600,2026-03-07,2026-03-11,Delivered,Ahmedabad West,False
-FMCG,PO-FM-43092,FG006,Lifebuoy Soap 100g,Marico Logistics,1655,30,49650,2026-03-17,2026-03-21,Delivered,Pune DC,False
-Auto Parts,PO-AU-92727,AP001,Brake Pads Set,Sundram Fasteners,185,1200,222000,2026-02-27,2026-03-11,Delivered,Pune Auto Hub,False
-Auto Parts,PO-AU-23173,AP001,Brake Pads Set,Motherson Group,200,1200,240000,2026-03-11,2026-03-23,Pending,Pune Auto Hub,False
-Auto Parts,PO-AU-48452,AP002,Oil Filter,Sundram Fasteners,632,320,202240,2026-04-05,2026-04-12,Delivered,Chennai Port,False
-Auto Parts,PO-AU-84177,AP002,Oil Filter,Minda Industries,843,320,269760,2026-03-23,2026-03-30,In Transit,Pune Auto Hub,True
-Auto Parts,PO-AU-75230,AP003,Spark Plug NGK,Minda Industries,1099,180,197820,2026-02-27,2026-03-08,Delivered,Pune Auto Hub,False
-Auto Parts,PO-AU-97404,AP003,Spark Plug NGK,Bosch India,870,180,156600,2026-03-22,2026-03-31,Delivered,Sanand Gujarat,False
-Auto Parts,PO-AU-19681,AP003,Spark Plug NGK,Motherson Group,959,180,172620,2026-02-23,2026-03-04,Delivered,Chennai Port,False
-Auto Parts,PO-AU-42780,AP003,Spark Plug NGK,Motherson Group,1054,180,189720,2026-03-19,2026-03-28,In Transit,Chennai Port,True
-Auto Parts,PO-AU-41091,AP003,Spark Plug NGK,Motherson Group,894,180,160920,2026-03-14,2026-03-23,Delivered,Chennai Port,False
-Auto Parts,PO-AU-45976,AP004,Timing Belt,Bosch India,268,2500,670000,2026-04-06,2026-04-21,In Transit,Manesar Plant,False
-Auto Parts,PO-AU-89569,AP004,Timing Belt,Sundram Fasteners,173,2500,432500,2026-03-07,2026-03-22,Delivered,Pune Auto Hub,False
-Auto Parts,PO-AU-96400,AP004,Timing Belt,Minda Industries,164,2500,410000,2026-02-27,2026-03-14,Pending,Manesar Plant,False
-Auto Parts,PO-AU-67779,AP004,Timing Belt,Bosch India,110,2500,275000,2026-02-25,2026-03-12,Delivered,Chennai Port,False
-Auto Parts,PO-AU-64460,AP005,Air Filter,Minda Industries,417,450,187650,2026-03-20,2026-03-28,Pending,Pune Auto Hub,True
-Auto Parts,PO-AU-79579,AP005,Air Filter,Sundram Fasteners,698,450,314100,2026-03-04,2026-03-12,Delivered,Pune Auto Hub,True
-Auto Parts,PO-AU-71385,AP006,Clutch Plate,Bosch India,166,3200,531200,2026-03-20,2026-04-07,Delivered,Pune Auto Hub,False
-Auto Parts,PO-AU-57942,AP006,Clutch Plate,Bosch India,181,3200,579200,2026-03-24,2026-04-11,Processing,Sanand Gujarat,True
-Auto Parts,PO-AU-58311,AP006,Clutch Plate,Sundram Fasteners,111,3200,355200,2026-03-04,2026-03-22,In Transit,Sanand Gujarat,False
-Auto Parts,PO-AU-40647,AP006,Clutch Plate,Motherson Group,107,3200,342400,2026-03-15,2026-04-02,Pending,Manesar Plant,False
-Auto Parts,PO-AU-39015,AP006,Clutch Plate,Bosch India,163,3200,521600,2026-03-03,2026-03-21,Processing,Sanand Gujarat,False
-Retail,PO-RE-40161,RT001,Nike Air Max,Metro Cash & Carry,147,3500,514500,2026-03-30,2026-04-20,Processing,Noida FC,True
-Retail,PO-RE-70260,RT001,Nike Air Max,Reliance Retail DC,161,3500,563500,2026-04-05,2026-04-26,Delivered,Hyderabad DC,False
-Retail,PO-RE-93904,RT001,Nike Air Max,Amazon B2B India,153,3500,535500,2026-03-02,2026-03-23,Pending,Hyderabad DC,True
-Retail,PO-RE-70305,RT002,Levi's 511 Jeans,Metro Cash & Carry,61,2200,134200,2026-03-18,2026-04-05,Processing,Noida FC,False
-Retail,PO-RE-87184,RT002,Levi's 511 Jeans,Amazon B2B India,71,2200,156200,2026-04-01,2026-04-19,In Transit,Noida FC,True
-Retail,PO-RE-32037,RT003,"Samsung 65"" TV",Reliance Retail DC,29,55000,1595000,2026-03-17,2026-04-11,Delivered,Noida FC,False
-Retail,PO-RE-94599,RT003,"Samsung 65"" TV",Flipkart B2B,37,55000,2035000,2026-03-26,2026-04-20,Delivered,Mumbai Logistics Park,True
-Retail,PO-RE-88957,RT003,"Samsung 65"" TV",Flipkart B2B,27,55000,1485000,2026-03-22,2026-04-16,Delivered,Noida FC,True
-Retail,PO-RE-83889,RT003,"Samsung 65"" TV",Amazon B2B India,46,55000,2530000,2026-02-26,2026-03-23,In Transit,Hyderabad DC,False
-Retail,PO-RE-71462,RT004,Apple AirPods Pro,Amazon B2B India,58,18000,1044000,2026-03-29,2026-04-18,Delivered,Hyderabad DC,False
-Retail,PO-RE-76497,RT004,Apple AirPods Pro,Reliance Retail DC,33,18000,594000,2026-03-01,2026-03-21,Delivered,Hyderabad DC,False
-Retail,PO-RE-47627,RT004,Apple AirPods Pro,Reliance Retail DC,33,18000,594000,2026-04-05,2026-04-25,Delivered,Noida FC,False
-Retail,PO-RE-86064,RT004,Apple AirPods Pro,Reliance Retail DC,54,18000,972000,2026-03-06,2026-03-26,In Transit,Bengaluru Hub,False
-Retail,PO-RE-29773,RT005,Prestige Cooker 5L,Reliance Retail DC,181,1800,325800,2026-03-18,2026-03-28,Processing,Bengaluru Hub,True
-Retail,PO-RE-94689,RT005,Prestige Cooker 5L,Flipkart B2B,81,1800,145800,2026-03-17,2026-03-27,Processing,Noida FC,True
-Retail,PO-RE-78517,RT005,Prestige Cooker 5L,Flipkart B2B,172,1800,309600,2026-03-10,2026-03-20,Processing,Hyderabad DC,True
-Retail,PO-RE-98984,RT006,Woodland Boots,Reliance Retail DC,97,2800,271600,2026-03-14,2026-03-29,Delivered,Hyderabad DC,True
-Retail,PO-RE-60667,RT006,Woodland Boots,Metro Cash & Carry,116,2800,324800,2026-04-01,2026-04-16,Pending,Hyderabad DC,False
-Retail,PO-RE-20682,RT006,Woodland Boots,Flipkart B2B,64,2800,179200,2026-02-24,2026-03-11,Delivered,Hyderabad DC,True
-Retail,PO-RE-87993,RT006,Woodland Boots,Reliance Retail DC,95,2800,266000,2026-02-25,2026-03-12,Delivered,Hyderabad DC,False
+Pharma,PO-PH-82676,PH001,Paracetamol 500mg,MediChem Pvt Ltd,915,12,10980,2026-03-14,2026-03-21,Delivered,Hyderabad Hub,False
+Pharma,PO-PH-92656,PH001,Paracetamol 500mg,GlobalMed Suppliers,1298,12,15576,2026-04-05,2026-04-12,Delivered,Hyderabad Hub,True
+Pharma,PO-PH-34833,PH001,Paracetamol 500mg,PharmaSynth India,1396,12,16752,2026-03-15,2026-03-22,Pending,Mumbai Central,True
+Pharma,PO-PH-60956,PH001,Paracetamol 500mg,MediChem Pvt Ltd,988,12,11856,2026-03-18,2026-03-25,In Transit,Chennai South,False
+Pharma,PO-PH-17347,PH002,Amoxicillin 250mg,GlobalMed Suppliers,337,45,15165,2026-04-23,2026-05-03,Delivered,Mumbai Central,False
+Pharma,PO-PH-97466,PH002,Amoxicillin 250mg,Cipla Bulk,1126,45,50670,2026-04-11,2026-04-21,Pending,Delhi North,False
+Pharma,PO-PH-28558,PH002,Amoxicillin 250mg,Cipla Bulk,373,45,16785,2026-04-10,2026-04-20,Delivered,Mumbai Central,False
+Pharma,PO-PH-95037,PH002,Amoxicillin 250mg,PharmaSynth India,346,45,15570,2026-03-16,2026-03-26,Delivered,Mumbai Central,True
+Pharma,PO-PH-69793,PH002,Amoxicillin 250mg,PharmaSynth India,614,45,27630,2026-04-21,2026-05-01,Delivered,Mumbai Central,False
+Pharma,PO-PH-90691,PH003,Insulin Glargine,PharmaSynth India,454,380,172520,2026-04-17,2026-05-01,Processing,Mumbai Central,False
+Pharma,PO-PH-98918,PH003,Insulin Glargine,Cipla Bulk,372,380,141360,2026-03-28,2026-04-11,Pending,Chennai South,True
+Pharma,PO-PH-87736,PH004,Azithromycin 500mg,PharmaSynth India,836,85,71060,2026-04-04,2026-04-12,Delivered,Chennai South,True
+Pharma,PO-PH-32026,PH004,Azithromycin 500mg,GlobalMed Suppliers,689,85,58565,2026-04-07,2026-04-15,In Transit,Delhi North,False
+Pharma,PO-PH-23102,PH004,Azithromycin 500mg,Cipla Bulk,483,85,41055,2026-03-18,2026-03-26,Delivered,Delhi North,True
+Pharma,PO-PH-33516,PH005,Cetirizine 10mg,MediChem Pvt Ltd,613,18,11034,2026-04-19,2026-04-24,Delivered,Chennai South,False
+Pharma,PO-PH-37021,PH005,Cetirizine 10mg,PharmaSynth India,2017,18,36306,2026-03-25,2026-03-30,Delivered,Chennai South,False
+Pharma,PO-PH-90024,PH005,Cetirizine 10mg,MediChem Pvt Ltd,1089,18,19602,2026-03-29,2026-04-03,Delivered,Delhi North,False
+Pharma,PO-PH-49478,PH005,Cetirizine 10mg,GlobalMed Suppliers,780,18,14040,2026-03-16,2026-03-21,Pending,Hyderabad Hub,True
+Pharma,PO-PH-79494,PH005,Cetirizine 10mg,MediChem Pvt Ltd,993,18,17874,2026-04-09,2026-04-14,Delivered,Chennai South,False
+Pharma,PO-PH-16955,PH006,Metformin 500mg,PharmaSynth India,876,22,19272,2026-03-26,2026-04-01,Delivered,Mumbai Central,False
+Pharma,PO-PH-33111,PH006,Metformin 500mg,PharmaSynth India,1421,22,31262,2026-03-12,2026-03-18,In Transit,Mumbai Central,True
+Pharma,PO-PH-66973,PH006,Metformin 500mg,GlobalMed Suppliers,1033,22,22726,2026-04-01,2026-04-07,Delivered,Chennai South,False
+FMCG,PO-FM-34182,FG001,Surf Excel 1kg,ITC Supply Chain,1866,95,177270,2026-03-27,2026-03-31,Delivered,Pune DC,False
+FMCG,PO-FM-68776,FG001,Surf Excel 1kg,ITC Supply Chain,1405,95,133475,2026-04-02,2026-04-06,Delivered,Kolkata East,True
+FMCG,PO-FM-29055,FG001,Surf Excel 1kg,Marico Logistics,2457,95,233415,2026-04-23,2026-04-27,In Transit,Kolkata East,True
+FMCG,PO-FM-72116,FG002,Maggi Noodles 70g,Nestle India,3889,14,54446,2026-03-14,2026-03-17,Delivered,Bangalore Hub,False
+FMCG,PO-FM-24721,FG002,Maggi Noodles 70g,Marico Logistics,2387,14,33418,2026-03-27,2026-03-30,Pending,Pune DC,True
+FMCG,PO-FM-13250,FG002,Maggi Noodles 70g,Marico Logistics,1478,14,20692,2026-03-20,2026-03-23,Delivered,Bangalore Hub,False
+FMCG,PO-FM-89711,FG002,Maggi Noodles 70g,ITC Supply Chain,2336,14,32704,2026-04-19,2026-04-22,Delivered,Bangalore Hub,False
+FMCG,PO-FM-80570,FG003,Colgate 200g,Marico Logistics,746,62,46252,2026-04-12,2026-04-17,Delivered,Pune DC,False
+FMCG,PO-FM-51649,FG003,Colgate 200g,HUL Distribution,1098,62,68076,2026-03-30,2026-04-04,In Transit,Kolkata East,True
+FMCG,PO-FM-58867,FG003,Colgate 200g,HUL Distribution,1457,62,90334,2026-03-28,2026-04-02,In Transit,Kolkata East,True
+FMCG,PO-FM-21481,FG003,Colgate 200g,ITC Supply Chain,1612,62,99944,2026-04-05,2026-04-10,Processing,Ahmedabad West,False
+FMCG,PO-FM-65552,FG004,Tata Salt 1kg,Marico Logistics,2382,20,47640,2026-03-27,2026-03-30,Delivered,Bangalore Hub,False
+FMCG,PO-FM-37234,FG004,Tata Salt 1kg,Nestle India,1552,20,31040,2026-03-17,2026-03-20,Delivered,Ahmedabad West,False
+FMCG,PO-FM-87421,FG004,Tata Salt 1kg,Marico Logistics,2573,20,51460,2026-03-22,2026-03-25,Delivered,Pune DC,True
+FMCG,PO-FM-32923,FG004,Tata Salt 1kg,Marico Logistics,2319,20,46380,2026-03-15,2026-03-18,In Transit,Bangalore Hub,True
+FMCG,PO-FM-74302,FG004,Tata Salt 1kg,HUL Distribution,2385,20,47700,2026-03-31,2026-04-03,Processing,Kolkata East,False
+FMCG,PO-FM-70745,FG005,Amul Butter 500g,ITC Supply Chain,1645,285,468825,2026-03-24,2026-03-26,Pending,Pune DC,False
+FMCG,PO-FM-93958,FG005,Amul Butter 500g,Marico Logistics,1037,285,295545,2026-04-15,2026-04-17,Delivered,Pune DC,False
+FMCG,PO-FM-74472,FG005,Amul Butter 500g,ITC Supply Chain,1354,285,385890,2026-04-06,2026-04-08,Delivered,Pune DC,True
+FMCG,PO-FM-88497,FG005,Amul Butter 500g,Nestle India,1509,285,430065,2026-04-07,2026-04-09,Delivered,Ahmedabad West,False
+FMCG,PO-FM-25674,FG006,Lifebuoy Soap 100g,Nestle India,2849,30,85470,2026-03-15,2026-03-19,Pending,Pune DC,False
+FMCG,PO-FM-29154,FG006,Lifebuoy Soap 100g,Nestle India,3282,30,98460,2026-04-14,2026-04-18,Delivered,Ahmedabad West,False
+FMCG,PO-FM-16932,FG006,Lifebuoy Soap 100g,Nestle India,2363,30,70890,2026-04-16,2026-04-20,Delivered,Kolkata East,False
+FMCG,PO-FM-48228,FG006,Lifebuoy Soap 100g,HUL Distribution,1099,30,32970,2026-04-02,2026-04-06,Delivered,Bangalore Hub,False
+Auto Parts,PO-AU-68006,AP001,Brake Pads Set,Motherson Group,311,1200,373200,2026-03-27,2026-04-08,In Transit,Manesar Plant,True
+Auto Parts,PO-AU-31514,AP001,Brake Pads Set,Motherson Group,305,1200,366000,2026-03-20,2026-04-01,Pending,Sanand Gujarat,True
+Auto Parts,PO-AU-84560,AP001,Brake Pads Set,Motherson Group,399,1200,478800,2026-03-31,2026-04-12,Delivered,Sanand Gujarat,False
+Auto Parts,PO-AU-61299,AP001,Brake Pads Set,Sundram Fasteners,409,1200,490800,2026-04-14,2026-04-26,Delivered,Sanand Gujarat,False
+Auto Parts,PO-AU-56237,AP001,Brake Pads Set,Sundram Fasteners,465,1200,558000,2026-03-31,2026-04-12,Pending,Chennai Port,True
+Auto Parts,PO-AU-86541,AP002,Oil Filter,Bosch India,675,320,216000,2026-04-16,2026-04-23,Delivered,Chennai Port,True
+Auto Parts,PO-AU-63992,AP002,Oil Filter,Sundram Fasteners,653,320,208960,2026-03-28,2026-04-04,Delivered,Manesar Plant,False
+Auto Parts,PO-AU-87664,AP003,Spark Plug NGK,Bosch India,1063,180,191340,2026-04-09,2026-04-18,Delivered,Manesar Plant,False
+Auto Parts,PO-AU-12583,AP003,Spark Plug NGK,Sundram Fasteners,745,180,134100,2026-04-17,2026-04-26,Delivered,Manesar Plant,False
+Auto Parts,PO-AU-65203,AP003,Spark Plug NGK,Sundram Fasteners,981,180,176580,2026-03-28,2026-04-06,Processing,Manesar Plant,False
+Auto Parts,PO-AU-61157,AP004,Timing Belt,Sundram Fasteners,196,2500,490000,2026-04-04,2026-04-19,Processing,Manesar Plant,False
+Auto Parts,PO-AU-36988,AP004,Timing Belt,Sundram Fasteners,276,2500,690000,2026-04-18,2026-05-03,Pending,Sanand Gujarat,False
+Auto Parts,PO-AU-57622,AP005,Air Filter,Motherson Group,564,450,253800,2026-04-14,2026-04-22,Delivered,Pune Auto Hub,False
+Auto Parts,PO-AU-38059,AP005,Air Filter,Sundram Fasteners,680,450,306000,2026-04-20,2026-04-28,Processing,Chennai Port,True
+Auto Parts,PO-AU-91863,AP005,Air Filter,Bosch India,455,450,204750,2026-03-19,2026-03-27,Delivered,Manesar Plant,False
+Auto Parts,PO-AU-79607,AP005,Air Filter,Motherson Group,284,450,127800,2026-04-07,2026-04-15,Processing,Sanand Gujarat,True
+Auto Parts,PO-AU-49309,AP006,Clutch Plate,Motherson Group,157,3200,502400,2026-03-14,2026-04-01,Processing,Chennai Port,True
+Auto Parts,PO-AU-77550,AP006,Clutch Plate,Motherson Group,144,3200,460800,2026-03-30,2026-04-17,Processing,Pune Auto Hub,False
+Retail,PO-RE-62564,RT001,Nike Air Max,Amazon B2B India,93,3500,325500,2026-04-08,2026-04-29,Delivered,Hyderabad DC,True
+Retail,PO-RE-25381,RT001,Nike Air Max,Reliance Retail DC,93,3500,325500,2026-04-01,2026-04-22,Processing,Bengaluru Hub,False
+Retail,PO-RE-39423,RT001,Nike Air Max,Flipkart B2B,176,3500,616000,2026-03-26,2026-04-16,Delivered,Mumbai Logistics Park,False
+Retail,PO-RE-60079,RT002,Levi's 511 Jeans,Flipkart B2B,135,2200,297000,2026-04-06,2026-04-24,In Transit,Bengaluru Hub,False
+Retail,PO-RE-98760,RT002,Levi's 511 Jeans,Flipkart B2B,67,2200,147400,2026-03-17,2026-04-04,Delivered,Bengaluru Hub,True
+Retail,PO-RE-44314,RT002,Levi's 511 Jeans,Flipkart B2B,43,2200,94600,2026-04-15,2026-05-03,Delivered,Bengaluru Hub,False
+Retail,PO-RE-94834,RT002,Levi's 511 Jeans,Amazon B2B India,114,2200,250800,2026-04-01,2026-04-19,Pending,Noida FC,True
+Retail,PO-RE-37815,RT003,"Samsung 65"" TV",Amazon B2B India,40,55000,2200000,2026-04-04,2026-04-29,Pending,Bengaluru Hub,False
+Retail,PO-RE-83007,RT003,"Samsung 65"" TV",Reliance Retail DC,19,55000,1045000,2026-04-08,2026-05-03,Delivered,Noida FC,True
+Retail,PO-RE-89478,RT003,"Samsung 65"" TV",Reliance Retail DC,45,55000,2475000,2026-04-09,2026-05-04,Delivered,Noida FC,True
+Retail,PO-RE-58614,RT004,Apple AirPods Pro,Flipkart B2B,55,18000,990000,2026-04-05,2026-04-25,Pending,Noida FC,False
+Retail,PO-RE-74597,RT004,Apple AirPods Pro,Metro Cash & Carry,40,18000,720000,2026-04-08,2026-04-28,Processing,Bengaluru Hub,True
+Retail,PO-RE-66744,RT004,Apple AirPods Pro,Flipkart B2B,75,18000,1350000,2026-04-04,2026-04-24,Processing,Hyderabad DC,True
+Retail,PO-RE-46831,RT004,Apple AirPods Pro,Metro Cash & Carry,38,18000,684000,2026-04-22,2026-05-12,In Transit,Bengaluru Hub,True
+Retail,PO-RE-77760,RT004,Apple AirPods Pro,Metro Cash & Carry,69,18000,1242000,2026-04-08,2026-04-28,Delivered,Bengaluru Hub,False
+Retail,PO-RE-96169,RT005,Prestige Cooker 5L,Amazon B2B India,98,1800,176400,2026-03-24,2026-04-03,Processing,Noida FC,True
+Retail,PO-RE-14700,RT005,Prestige Cooker 5L,Amazon B2B India,118,1800,212400,2026-04-21,2026-05-01,Delivered,Hyderabad DC,True
+Retail,PO-RE-74868,RT005,Prestige Cooker 5L,Reliance Retail DC,171,1800,307800,2026-03-26,2026-04-05,Delivered,Bengaluru Hub,True
+Retail,PO-RE-74616,RT005,Prestige Cooker 5L,Reliance Retail DC,184,1800,331200,2026-03-20,2026-03-30,In Transit,Mumbai Logistics Park,True
+Retail,PO-RE-32058,RT006,Woodland Boots,Metro Cash & Carry,81,2800,226800,2026-04-11,2026-04-26,Delivered,Mumbai Logistics Park,False
+Retail,PO-RE-33667,RT006,Woodland Boots,Amazon B2B India,112,2800,313600,2026-04-24,2026-05-09,Processing,Noida FC,True

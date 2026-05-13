@@ -1,97 +1,97 @@
 industry,sku,product_name,warehouse,current_stock,reorder_point,max_stock,unit,unit_cost,lead_days,daily_usage,days_of_stock,last_updated,status
-Pharma,PH001,Paracetamol 500mg,Mumbai Central,140,500,3000,strips,12,7,21.1,6.6,2026-04-08 12:10,CRITICAL
-Pharma,PH001,Paracetamol 500mg,Delhi North,771,500,3000,strips,12,7,31.9,24.2,2026-04-08 12:10,OK
-Pharma,PH001,Paracetamol 500mg,Chennai South,216,500,3000,strips,12,7,15.8,13.7,2026-04-08 12:10,LOW
-Pharma,PH001,Paracetamol 500mg,Hyderabad Hub,258,500,3000,strips,12,7,30.1,8.6,2026-04-08 12:10,LOW
-Pharma,PH002,Amoxicillin 250mg,Mumbai Central,166,300,2000,strips,45,10,19.5,8.5,2026-04-08 12:10,LOW
-Pharma,PH002,Amoxicillin 250mg,Delhi North,150,300,2000,strips,45,10,13.2,11.4,2026-04-08 12:10,LOW
-Pharma,PH002,Amoxicillin 250mg,Chennai South,133,300,2000,strips,45,10,11.4,11.7,2026-04-08 12:10,LOW
-Pharma,PH002,Amoxicillin 250mg,Hyderabad Hub,985,300,2000,strips,45,10,11.3,86.9,2026-04-08 12:10,OK
-Pharma,PH003,Insulin Glargine,Mumbai Central,48,200,1000,vials,380,14,7.0,6.9,2026-04-08 12:10,CRITICAL
-Pharma,PH003,Insulin Glargine,Delhi North,432,200,1000,vials,380,14,14.1,30.7,2026-04-08 12:10,OK
-Pharma,PH003,Insulin Glargine,Chennai South,827,200,1000,vials,380,14,7.2,114.1,2026-04-08 12:10,OK
-Pharma,PH003,Insulin Glargine,Hyderabad Hub,37,200,1000,vials,380,14,14.3,2.6,2026-04-08 12:10,CRITICAL
-Pharma,PH004,Azithromycin 500mg,Mumbai Central,1426,400,2500,strips,85,8,19.2,74.1,2026-04-08 12:10,OK
-Pharma,PH004,Azithromycin 500mg,Delhi North,553,400,2500,strips,85,8,12.9,42.8,2026-04-08 12:10,OK
-Pharma,PH004,Azithromycin 500mg,Chennai South,626,400,2500,strips,85,8,31.7,19.7,2026-04-08 12:10,OK
-Pharma,PH004,Azithromycin 500mg,Hyderabad Hub,25,400,2500,strips,85,8,19.6,1.3,2026-04-08 12:10,CRITICAL
-Pharma,PH005,Cetirizine 10mg,Mumbai Central,2097,600,3500,strips,18,5,28.9,72.4,2026-04-08 12:10,OK
-Pharma,PH005,Cetirizine 10mg,Delhi North,1756,600,3500,strips,18,5,38.1,46.1,2026-04-08 12:10,OK
-Pharma,PH005,Cetirizine 10mg,Chennai South,325,600,3500,strips,18,5,23.1,14.0,2026-04-08 12:10,LOW
-Pharma,PH005,Cetirizine 10mg,Hyderabad Hub,194,600,3500,strips,18,5,26.1,7.4,2026-04-08 12:10,LOW
-Pharma,PH006,Metformin 500mg,Mumbai Central,1079,450,2800,strips,22,6,32.5,33.2,2026-04-08 12:10,OK
-Pharma,PH006,Metformin 500mg,Delhi North,16,450,2800,strips,22,6,31.6,0.5,2026-04-08 12:10,CRITICAL
-Pharma,PH006,Metformin 500mg,Chennai South,1823,450,2800,strips,22,6,18.2,99.9,2026-04-08 12:10,OK
-Pharma,PH006,Metformin 500mg,Hyderabad Hub,255,450,2800,strips,22,6,22.4,11.4,2026-04-08 12:10,LOW
-FMCG,FG001,Surf Excel 1kg,Pune DC,3336,800,5000,units,95,4,55.3,60.3,2026-04-08 12:10,OK
-FMCG,FG001,Surf Excel 1kg,Bangalore Hub,2006,800,5000,units,95,4,58.6,34.3,2026-04-08 12:10,OK
-FMCG,FG001,Surf Excel 1kg,Kolkata East,81,800,5000,units,95,4,55.5,1.5,2026-04-08 12:10,CRITICAL
-FMCG,FG001,Surf Excel 1kg,Ahmedabad West,762,800,5000,units,95,4,25.5,29.8,2026-04-08 12:10,REORDER
-FMCG,FG002,Maggi Noodles 70g,Pune DC,471,1000,7000,cartons,14,3,47.5,9.9,2026-04-08 12:10,LOW
-FMCG,FG002,Maggi Noodles 70g,Bangalore Hub,197,1000,7000,cartons,14,3,49.9,3.9,2026-04-08 12:10,CRITICAL
-FMCG,FG002,Maggi Noodles 70g,Kolkata East,2682,1000,7000,cartons,14,3,78.3,34.2,2026-04-08 12:10,OK
-FMCG,FG002,Maggi Noodles 70g,Ahmedabad West,2686,1000,7000,cartons,14,3,55.5,48.4,2026-04-08 12:10,OK
-FMCG,FG003,Colgate 200g,Pune DC,3063,700,4500,units,62,5,39.8,77.0,2026-04-08 12:10,OK
-FMCG,FG003,Colgate 200g,Bangalore Hub,133,700,4500,units,62,5,27.2,4.9,2026-04-08 12:10,CRITICAL
-FMCG,FG003,Colgate 200g,Kolkata East,305,700,4500,units,62,5,36.2,8.4,2026-04-08 12:10,LOW
-FMCG,FG003,Colgate 200g,Ahmedabad West,3264,700,4500,units,62,5,36.3,90.0,2026-04-08 12:10,OK
-FMCG,FG004,Tata Salt 1kg,Pune DC,590,1200,8000,units,20,3,47.4,12.4,2026-04-08 12:10,LOW
-FMCG,FG004,Tata Salt 1kg,Bangalore Hub,843,1200,8000,units,20,3,36.1,23.4,2026-04-08 12:10,REORDER
-FMCG,FG004,Tata Salt 1kg,Kolkata East,4890,1200,8000,units,20,3,92.4,52.9,2026-04-08 12:10,OK
-FMCG,FG004,Tata Salt 1kg,Ahmedabad West,6517,1200,8000,units,20,3,57.9,112.6,2026-04-08 12:10,OK
-FMCG,FG005,Amul Butter 500g,Pune DC,486,500,3000,units,285,2,38.0,12.8,2026-04-08 12:10,REORDER
-FMCG,FG005,Amul Butter 500g,Bangalore Hub,1485,500,3000,units,285,2,18.1,82.0,2026-04-08 12:10,OK
-FMCG,FG005,Amul Butter 500g,Kolkata East,1430,500,3000,units,285,2,31.7,45.1,2026-04-08 12:10,OK
-FMCG,FG005,Amul Butter 500g,Ahmedabad West,1536,500,3000,units,285,2,22.4,68.6,2026-04-08 12:10,OK
-FMCG,FG006,Lifebuoy Soap 100g,Pune DC,388,900,6000,units,30,4,57.5,6.8,2026-04-08 12:10,LOW
-FMCG,FG006,Lifebuoy Soap 100g,Bangalore Hub,1785,900,6000,units,30,4,40.5,44.0,2026-04-08 12:10,OK
-FMCG,FG006,Lifebuoy Soap 100g,Kolkata East,4848,900,6000,units,30,4,40.7,119.2,2026-04-08 12:10,OK
-FMCG,FG006,Lifebuoy Soap 100g,Ahmedabad West,2081,900,6000,units,30,4,53.1,39.2,2026-04-08 12:10,OK
-Auto Parts,AP001,Brake Pads Set,Manesar Plant,470,150,800,sets,1200,12,8.8,53.2,2026-04-08 12:10,OK
-Auto Parts,AP001,Brake Pads Set,Pune Auto Hub,72,150,800,sets,1200,12,11.6,6.2,2026-04-08 12:10,LOW
-Auto Parts,AP001,Brake Pads Set,Chennai Port,147,150,800,sets,1200,12,5.4,27.3,2026-04-08 12:10,REORDER
-Auto Parts,AP001,Brake Pads Set,Sanand Gujarat,486,150,800,sets,1200,12,10.4,46.6,2026-04-08 12:10,OK
-Auto Parts,AP002,Oil Filter,Manesar Plant,582,300,1500,units,320,7,14.7,39.6,2026-04-08 12:10,OK
-Auto Parts,AP002,Oil Filter,Pune Auto Hub,1026,300,1500,units,320,7,17.8,57.6,2026-04-08 12:10,OK
-Auto Parts,AP002,Oil Filter,Chennai Port,998,300,1500,units,320,7,18.3,54.5,2026-04-08 12:10,OK
-Auto Parts,AP002,Oil Filter,Sanand Gujarat,323,300,1500,units,320,7,12.1,26.7,2026-04-08 12:10,REORDER
-Auto Parts,AP003,Spark Plug NGK,Manesar Plant,592,400,2000,units,180,9,13.6,43.5,2026-04-08 12:10,OK
-Auto Parts,AP003,Spark Plug NGK,Pune Auto Hub,19,400,2000,units,180,9,15.1,1.3,2026-04-08 12:10,CRITICAL
-Auto Parts,AP003,Spark Plug NGK,Chennai Port,996,400,2000,units,180,9,23.9,41.7,2026-04-08 12:10,OK
-Auto Parts,AP003,Spark Plug NGK,Sanand Gujarat,73,400,2000,units,180,9,26.1,2.8,2026-04-08 12:10,CRITICAL
-Auto Parts,AP004,Timing Belt,Manesar Plant,399,100,500,units,2500,15,3.4,118.9,2026-04-08 12:10,OK
-Auto Parts,AP004,Timing Belt,Pune Auto Hub,159,100,500,units,2500,15,6.9,22.9,2026-04-08 12:10,OK
-Auto Parts,AP004,Timing Belt,Chennai Port,360,100,500,units,2500,15,7.0,51.3,2026-04-08 12:10,OK
-Auto Parts,AP004,Timing Belt,Sanand Gujarat,141,100,500,units,2500,15,5.7,24.6,2026-04-08 12:10,OK
-Auto Parts,AP005,Air Filter,Manesar Plant,68,250,1200,units,450,8,17.8,3.8,2026-04-08 12:10,CRITICAL
-Auto Parts,AP005,Air Filter,Pune Auto Hub,78,250,1200,units,450,8,14.9,5.2,2026-04-08 12:10,LOW
-Auto Parts,AP005,Air Filter,Chennai Port,944,250,1200,units,450,8,11.1,85.0,2026-04-08 12:10,OK
-Auto Parts,AP005,Air Filter,Sanand Gujarat,227,250,1200,units,450,8,11.3,20.1,2026-04-08 12:10,REORDER
-Auto Parts,AP006,Clutch Plate,Manesar Plant,238,80,400,units,3200,18,4.4,54.1,2026-04-08 12:10,OK
-Auto Parts,AP006,Clutch Plate,Pune Auto Hub,284,80,400,units,3200,18,4.8,59.3,2026-04-08 12:10,OK
-Auto Parts,AP006,Clutch Plate,Chennai Port,253,80,400,units,3200,18,4.8,52.5,2026-04-08 12:10,OK
-Auto Parts,AP006,Clutch Plate,Sanand Gujarat,43,80,400,units,3200,18,5.7,7.5,2026-04-08 12:10,LOW
-Retail,RT001,Nike Air Max,Noida FC,97,50,300,pairs,3500,21,1.8,54.1,2026-04-08 12:10,OK
-Retail,RT001,Nike Air Max,Mumbai Logistics Park,31,50,300,pairs,3500,21,2.3,13.7,2026-04-08 12:10,LOW
-Retail,RT001,Nike Air Max,Hyderabad DC,7,50,300,pairs,3500,21,3.7,1.9,2026-04-08 12:10,CRITICAL
-Retail,RT001,Nike Air Max,Bengaluru Hub,54,50,300,pairs,3500,21,2.4,22.2,2026-04-08 12:10,REORDER
-Retail,RT002,Levi's 511 Jeans,Noida FC,206,40,250,units,2200,18,2.3,90.3,2026-04-08 12:10,OK
-Retail,RT002,Levi's 511 Jeans,Mumbai Logistics Park,166,40,250,units,2200,18,1.5,110.0,2026-04-08 12:10,OK
-Retail,RT002,Levi's 511 Jeans,Hyderabad DC,122,40,250,units,2200,18,2.9,42.5,2026-04-08 12:10,OK
-Retail,RT002,Levi's 511 Jeans,Bengaluru Hub,173,40,250,units,2200,18,3.1,55.8,2026-04-08 12:10,OK
-Retail,RT003,"Samsung 65"" TV",Noida FC,8,15,80,units,55000,25,0.6,13.1,2026-04-08 12:10,LOW
-Retail,RT003,"Samsung 65"" TV",Mumbai Logistics Park,34,15,80,units,55000,25,1.1,31.1,2026-04-08 12:10,OK
-Retail,RT003,"Samsung 65"" TV",Hyderabad DC,12,15,80,units,55000,25,0.7,16.5,2026-04-08 12:10,REORDER
-Retail,RT003,"Samsung 65"" TV",Bengaluru Hub,63,15,80,units,55000,25,0.7,87.6,2026-04-08 12:10,OK
-Retail,RT004,Apple AirPods Pro,Noida FC,62,30,150,units,18000,20,2.4,26.4,2026-04-08 12:10,OK
-Retail,RT004,Apple AirPods Pro,Mumbai Logistics Park,120,30,150,units,18000,20,1.0,115.7,2026-04-08 12:10,OK
-Retail,RT004,Apple AirPods Pro,Hyderabad DC,39,30,150,units,18000,20,1.8,21.7,2026-04-08 12:10,OK
-Retail,RT004,Apple AirPods Pro,Bengaluru Hub,10,30,150,units,18000,20,1.3,7.9,2026-04-08 12:10,LOW
-Retail,RT005,Prestige Cooker 5L,Noida FC,88,60,350,units,1800,10,2.4,36.4,2026-04-08 12:10,OK
-Retail,RT005,Prestige Cooker 5L,Mumbai Logistics Park,130,60,350,units,1800,10,4.2,30.7,2026-04-08 12:10,OK
-Retail,RT005,Prestige Cooker 5L,Hyderabad DC,143,60,350,units,1800,10,2.2,63.8,2026-04-08 12:10,OK
-Retail,RT005,Prestige Cooker 5L,Bengaluru Hub,25,60,350,units,1800,10,4.8,5.3,2026-04-08 12:10,LOW
-Retail,RT006,Woodland Boots,Noida FC,51,45,200,pairs,2800,15,3.1,16.2,2026-04-08 12:10,REORDER
-Retail,RT006,Woodland Boots,Mumbai Logistics Park,46,45,200,pairs,2800,15,1.4,32.7,2026-04-08 12:10,REORDER
-Retail,RT006,Woodland Boots,Hyderabad DC,21,45,200,pairs,2800,15,3.1,6.7,2026-04-08 12:10,LOW
-Retail,RT006,Woodland Boots,Bengaluru Hub,168,45,200,pairs,2800,15,1.7,96.4,2026-04-08 12:10,OK
+Pharma,PH001,Paracetamol 500mg,Mumbai Central,2391,500,3000,strips,12,7,26.7,89.5,2026-04-25 00:47,OK
+Pharma,PH001,Paracetamol 500mg,Delhi North,2299,500,3000,strips,12,7,29.3,78.3,2026-04-25 00:47,OK
+Pharma,PH001,Paracetamol 500mg,Chennai South,1557,500,3000,strips,12,7,39.0,39.9,2026-04-25 00:47,OK
+Pharma,PH001,Paracetamol 500mg,Hyderabad Hub,1406,500,3000,strips,12,7,15.9,88.5,2026-04-25 00:47,OK
+Pharma,PH002,Amoxicillin 250mg,Mumbai Central,1343,300,2000,strips,45,10,19.9,67.5,2026-04-25 00:47,OK
+Pharma,PH002,Amoxicillin 250mg,Delhi North,1274,300,2000,strips,45,10,18.4,69.1,2026-04-25 00:47,OK
+Pharma,PH002,Amoxicillin 250mg,Chennai South,13,300,2000,strips,45,10,18.8,0.7,2026-04-25 00:47,CRITICAL
+Pharma,PH002,Amoxicillin 250mg,Hyderabad Hub,717,300,2000,strips,45,10,18.4,39.0,2026-04-25 00:47,OK
+Pharma,PH003,Insulin Glargine,Mumbai Central,373,200,1000,vials,380,14,7.3,51.3,2026-04-25 00:47,OK
+Pharma,PH003,Insulin Glargine,Delhi North,158,200,1000,vials,380,14,8.8,18.0,2026-04-25 00:47,REORDER
+Pharma,PH003,Insulin Glargine,Chennai South,215,200,1000,vials,380,14,8.8,24.6,2026-04-25 00:47,REORDER
+Pharma,PH003,Insulin Glargine,Hyderabad Hub,14,200,1000,vials,380,14,12.0,1.2,2026-04-25 00:47,CRITICAL
+Pharma,PH004,Azithromycin 500mg,Mumbai Central,2023,400,2500,strips,85,8,15.0,134.7,2026-04-25 00:47,OK
+Pharma,PH004,Azithromycin 500mg,Delhi North,1074,400,2500,strips,85,8,15.5,69.3,2026-04-25 00:47,OK
+Pharma,PH004,Azithromycin 500mg,Chennai South,1762,400,2500,strips,85,8,21.7,81.2,2026-04-25 00:47,OK
+Pharma,PH004,Azithromycin 500mg,Hyderabad Hub,1797,400,2500,strips,85,8,12.7,141.9,2026-04-25 00:47,OK
+Pharma,PH005,Cetirizine 10mg,Mumbai Central,585,600,3500,strips,18,5,35.9,16.3,2026-04-25 00:47,REORDER
+Pharma,PH005,Cetirizine 10mg,Delhi North,871,600,3500,strips,18,5,40.6,21.5,2026-04-25 00:47,OK
+Pharma,PH005,Cetirizine 10mg,Chennai South,1931,600,3500,strips,18,5,25.1,76.8,2026-04-25 00:47,OK
+Pharma,PH005,Cetirizine 10mg,Hyderabad Hub,2042,600,3500,strips,18,5,23.0,88.7,2026-04-25 00:47,OK
+Pharma,PH006,Metformin 500mg,Mumbai Central,135,450,2800,strips,22,6,30.5,4.4,2026-04-25 00:47,CRITICAL
+Pharma,PH006,Metformin 500mg,Delhi North,237,450,2800,strips,22,6,22.5,10.5,2026-04-25 00:47,LOW
+Pharma,PH006,Metformin 500mg,Chennai South,1414,450,2800,strips,22,6,34.8,40.6,2026-04-25 00:47,OK
+Pharma,PH006,Metformin 500mg,Hyderabad Hub,199,450,2800,strips,22,6,24.2,8.2,2026-04-25 00:47,LOW
+FMCG,FG001,Surf Excel 1kg,Pune DC,3965,800,5000,units,95,4,25.7,154.1,2026-04-25 00:47,OK
+FMCG,FG001,Surf Excel 1kg,Bangalore Hub,275,800,5000,units,95,4,31.0,8.9,2026-04-25 00:47,LOW
+FMCG,FG001,Surf Excel 1kg,Kolkata East,263,800,5000,units,95,4,28.6,9.2,2026-04-25 00:47,LOW
+FMCG,FG001,Surf Excel 1kg,Ahmedabad West,227,800,5000,units,95,4,47.7,4.8,2026-04-25 00:47,CRITICAL
+FMCG,FG002,Maggi Noodles 70g,Pune DC,3070,1000,7000,cartons,14,3,67.4,45.6,2026-04-25 00:47,OK
+FMCG,FG002,Maggi Noodles 70g,Bangalore Hub,112,1000,7000,cartons,14,3,46.3,2.4,2026-04-25 00:47,CRITICAL
+FMCG,FG002,Maggi Noodles 70g,Kolkata East,422,1000,7000,cartons,14,3,73.5,5.7,2026-04-25 00:47,LOW
+FMCG,FG002,Maggi Noodles 70g,Ahmedabad West,3476,1000,7000,cartons,14,3,33.7,103.2,2026-04-25 00:47,OK
+FMCG,FG003,Colgate 200g,Pune DC,2676,700,4500,units,62,5,52.2,51.3,2026-04-25 00:47,OK
+FMCG,FG003,Colgate 200g,Bangalore Hub,312,700,4500,units,62,5,36.9,8.4,2026-04-25 00:47,LOW
+FMCG,FG003,Colgate 200g,Kolkata East,1866,700,4500,units,62,5,37.0,50.4,2026-04-25 00:47,OK
+FMCG,FG003,Colgate 200g,Ahmedabad West,1075,700,4500,units,62,5,55.1,19.5,2026-04-25 00:47,OK
+FMCG,FG004,Tata Salt 1kg,Pune DC,2136,1200,8000,units,20,3,37.9,56.3,2026-04-25 00:47,OK
+FMCG,FG004,Tata Salt 1kg,Bangalore Hub,139,1200,8000,units,20,3,42.7,3.3,2026-04-25 00:47,CRITICAL
+FMCG,FG004,Tata Salt 1kg,Kolkata East,4293,1200,8000,units,20,3,46.3,92.8,2026-04-25 00:47,OK
+FMCG,FG004,Tata Salt 1kg,Ahmedabad West,302,1200,8000,units,20,3,72.2,4.2,2026-04-25 00:47,CRITICAL
+FMCG,FG005,Amul Butter 500g,Pune DC,896,500,3000,units,285,2,28.8,31.1,2026-04-25 00:47,OK
+FMCG,FG005,Amul Butter 500g,Bangalore Hub,267,500,3000,units,285,2,27.2,9.8,2026-04-25 00:47,LOW
+FMCG,FG005,Amul Butter 500g,Kolkata East,1086,500,3000,units,285,2,35.9,30.2,2026-04-25 00:47,OK
+FMCG,FG005,Amul Butter 500g,Ahmedabad West,219,500,3000,units,285,2,33.4,6.6,2026-04-25 00:47,LOW
+FMCG,FG006,Lifebuoy Soap 100g,Pune DC,444,900,6000,units,30,4,53.1,8.4,2026-04-25 00:47,LOW
+FMCG,FG006,Lifebuoy Soap 100g,Bangalore Hub,1580,900,6000,units,30,4,67.4,23.4,2026-04-25 00:47,OK
+FMCG,FG006,Lifebuoy Soap 100g,Kolkata East,3782,900,6000,units,30,4,28.8,131.3,2026-04-25 00:47,OK
+FMCG,FG006,Lifebuoy Soap 100g,Ahmedabad West,4215,900,6000,units,30,4,49.7,84.8,2026-04-25 00:47,OK
+Auto Parts,AP001,Brake Pads Set,Manesar Plant,247,150,800,sets,1200,12,9.0,27.5,2026-04-25 00:47,OK
+Auto Parts,AP001,Brake Pads Set,Pune Auto Hub,231,150,800,sets,1200,12,11.0,20.9,2026-04-25 00:47,OK
+Auto Parts,AP001,Brake Pads Set,Chennai Port,368,150,800,sets,1200,12,9.7,37.8,2026-04-25 00:47,OK
+Auto Parts,AP001,Brake Pads Set,Sanand Gujarat,74,150,800,sets,1200,12,7.1,10.4,2026-04-25 00:47,LOW
+Auto Parts,AP002,Oil Filter,Manesar Plant,132,300,1500,units,320,7,13.2,10.0,2026-04-25 00:47,LOW
+Auto Parts,AP002,Oil Filter,Pune Auto Hub,1113,300,1500,units,320,7,22.8,48.8,2026-04-25 00:47,OK
+Auto Parts,AP002,Oil Filter,Chennai Port,39,300,1500,units,320,7,16.6,2.4,2026-04-25 00:47,CRITICAL
+Auto Parts,AP002,Oil Filter,Sanand Gujarat,505,300,1500,units,320,7,17.4,29.1,2026-04-25 00:47,OK
+Auto Parts,AP003,Spark Plug NGK,Manesar Plant,1572,400,2000,units,180,9,22.5,69.8,2026-04-25 00:47,OK
+Auto Parts,AP003,Spark Plug NGK,Pune Auto Hub,1249,400,2000,units,180,9,26.0,48.0,2026-04-25 00:47,OK
+Auto Parts,AP003,Spark Plug NGK,Chennai Port,393,400,2000,units,180,9,30.3,13.0,2026-04-25 00:47,REORDER
+Auto Parts,AP003,Spark Plug NGK,Sanand Gujarat,398,400,2000,units,180,9,30.5,13.1,2026-04-25 00:47,REORDER
+Auto Parts,AP004,Timing Belt,Manesar Plant,285,100,500,units,2500,15,6.5,44.2,2026-04-25 00:47,OK
+Auto Parts,AP004,Timing Belt,Pune Auto Hub,111,100,500,units,2500,15,7.4,14.9,2026-04-25 00:47,REORDER
+Auto Parts,AP004,Timing Belt,Chennai Port,345,100,500,units,2500,15,7.9,43.9,2026-04-25 00:47,OK
+Auto Parts,AP004,Timing Belt,Sanand Gujarat,128,100,500,units,2500,15,3.1,40.7,2026-04-25 00:47,OK
+Auto Parts,AP005,Air Filter,Manesar Plant,32,250,1200,units,450,8,18.2,1.8,2026-04-25 00:47,CRITICAL
+Auto Parts,AP005,Air Filter,Pune Auto Hub,245,250,1200,units,450,8,11.3,21.6,2026-04-25 00:47,REORDER
+Auto Parts,AP005,Air Filter,Chennai Port,20,250,1200,units,450,8,12.8,1.6,2026-04-25 00:47,CRITICAL
+Auto Parts,AP005,Air Filter,Sanand Gujarat,881,250,1200,units,450,8,8.5,104.0,2026-04-25 00:47,OK
+Auto Parts,AP006,Clutch Plate,Manesar Plant,279,80,400,units,3200,18,2.6,108.6,2026-04-25 00:47,OK
+Auto Parts,AP006,Clutch Plate,Pune Auto Hub,42,80,400,units,3200,18,4.5,9.4,2026-04-25 00:47,LOW
+Auto Parts,AP006,Clutch Plate,Chennai Port,62,80,400,units,3200,18,6.0,10.3,2026-04-25 00:47,REORDER
+Auto Parts,AP006,Clutch Plate,Sanand Gujarat,42,80,400,units,3200,18,2.4,17.2,2026-04-25 00:47,LOW
+Retail,RT001,Nike Air Max,Noida FC,180,50,300,pairs,3500,21,3.7,49.2,2026-04-25 00:47,OK
+Retail,RT001,Nike Air Max,Mumbai Logistics Park,167,50,300,pairs,3500,21,3.2,53.0,2026-04-25 00:47,OK
+Retail,RT001,Nike Air Max,Hyderabad DC,230,50,300,pairs,3500,21,2.7,86.2,2026-04-25 00:47,OK
+Retail,RT001,Nike Air Max,Bengaluru Hub,183,50,300,pairs,3500,21,3.0,60.3,2026-04-25 00:47,OK
+Retail,RT002,Levi's 511 Jeans,Noida FC,212,40,250,units,2200,18,3.1,69.1,2026-04-25 00:47,OK
+Retail,RT002,Levi's 511 Jeans,Mumbai Logistics Park,202,40,250,units,2200,18,2.2,90.0,2026-04-25 00:47,OK
+Retail,RT002,Levi's 511 Jeans,Hyderabad DC,109,40,250,units,2200,18,1.7,64.9,2026-04-25 00:47,OK
+Retail,RT002,Levi's 511 Jeans,Bengaluru Hub,207,40,250,units,2200,18,1.8,115.0,2026-04-25 00:47,OK
+Retail,RT003,"Samsung 65"" TV",Noida FC,33,15,80,units,55000,25,1.1,30.1,2026-04-25 00:47,OK
+Retail,RT003,"Samsung 65"" TV",Mumbai Logistics Park,3,15,80,units,55000,25,1.1,2.8,2026-04-25 00:47,CRITICAL
+Retail,RT003,"Samsung 65"" TV",Hyderabad DC,23,15,80,units,55000,25,0.9,24.6,2026-04-25 00:47,OK
+Retail,RT003,"Samsung 65"" TV",Bengaluru Hub,22,15,80,units,55000,25,0.6,35.1,2026-04-25 00:47,OK
+Retail,RT004,Apple AirPods Pro,Noida FC,6,30,150,units,18000,20,0.9,6.4,2026-04-25 00:47,CRITICAL
+Retail,RT004,Apple AirPods Pro,Mumbai Logistics Park,114,30,150,units,18000,20,1.6,71.4,2026-04-25 00:47,OK
+Retail,RT004,Apple AirPods Pro,Hyderabad DC,83,30,150,units,18000,20,1.5,54.1,2026-04-25 00:47,OK
+Retail,RT004,Apple AirPods Pro,Bengaluru Hub,5,30,150,units,18000,20,1.3,3.8,2026-04-25 00:47,CRITICAL
+Retail,RT005,Prestige Cooker 5L,Noida FC,38,60,350,units,1800,10,4.2,9.0,2026-04-25 00:47,LOW
+Retail,RT005,Prestige Cooker 5L,Mumbai Logistics Park,114,60,350,units,1800,10,1.9,59.2,2026-04-25 00:47,OK
+Retail,RT005,Prestige Cooker 5L,Hyderabad DC,272,60,350,units,1800,10,2.0,138.4,2026-04-25 00:47,OK
+Retail,RT005,Prestige Cooker 5L,Bengaluru Hub,66,60,350,units,1800,10,2.7,24.5,2026-04-25 00:47,REORDER
+Retail,RT006,Woodland Boots,Noida FC,34,45,200,pairs,2800,15,2.3,15.0,2026-04-25 00:47,REORDER
+Retail,RT006,Woodland Boots,Mumbai Logistics Park,111,45,200,pairs,2800,15,3.3,33.2,2026-04-25 00:47,OK
+Retail,RT006,Woodland Boots,Hyderabad DC,119,45,200,pairs,2800,15,3.0,39.9,2026-04-25 00:47,OK
+Retail,RT006,Woodland Boots,Bengaluru Hub,18,45,200,pairs,2800,15,3.0,6.0,2026-04-25 00:47,LOW
