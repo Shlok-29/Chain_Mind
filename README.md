@@ -79,6 +79,3 @@ ChainMind operates on a "Sense-Think-Act" loop. It **Senses** the current state 
 - **Risk Mitigation**: Proactively identifies supplier disruptions before they impact production.
 - **Cost Reduction**: Optimizes reorder quantities to minimize excess stock while maintaining high service levels.
 - **Scalable Architecture**: Easily extendable to new industries or additional agent roles.
-
----
-*Built for Capgemini AgentifAI Buildathon 2026*
