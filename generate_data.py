@@ -13,8 +13,22 @@ import random
 random.seed(42)
 np.random.seed(42)
 
-DATA_DIR = os.path.join(os.path.dirname(__file__), "data")
-os.makedirs(DATA_DIR, exist_ok=True)
+def get_data_dir():
+    base_dir = os.path.join(os.path.dirname(__file__), "data")
+    try:
+        os.makedirs(base_dir, exist_ok=True)
+        # Test write capability
+        test_file = os.path.join(base_dir, ".write_test")
+        with open(test_file, "w") as f:
+            f.write("ok")
+        os.remove(test_file)
+        return base_dir
+    except Exception:
+        tmp_dir = "/tmp/data"
+        os.makedirs(tmp_dir, exist_ok=True)
+        return tmp_dir
+
+DATA_DIR = get_data_dir()
 
 # ─── Industry Configs ───────────────────────────────────────────────────────
 

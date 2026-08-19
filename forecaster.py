@@ -63,6 +63,12 @@ def forecast_sku(history_df: pd.DataFrame, sku: str, forecast_days: int = 30) ->
     predictions = model.predict(X_future)
     predictions = np.maximum(predictions, 0)
 
+    # Calculate residual variance for confidence interval prediction bounds
+    residuals = y - model.predict(X_poly)
+    std_err = np.std(residuals) if len(residuals) > 1 else 5.0
+    upper_bounds = [round(float(v + 1.96 * std_err), 1) for v in predictions]
+    lower_bounds = [round(float(max(0, v - 1.96 * std_err)), 1) for v in predictions]
+
     # Calculate metrics
     avg_daily_demand = float(np.mean(predictions))
     total_forecast = float(np.sum(predictions))
@@ -82,6 +88,8 @@ def forecast_sku(history_df: pd.DataFrame, sku: str, forecast_days: int = 30) ->
         "recent_7day_avg": round(recent_avg, 1),
         "forecast_dates": [d.strftime("%Y-%m-%d") for d in future_dates],
         "forecast_values": [round(float(v), 1) for v in predictions],
+        "upper_bound": upper_bounds,
+        "lower_bound": lower_bounds,
         "history_dates": df["date"].dt.strftime("%Y-%m-%d").tolist(),
         "history_values": df["demand"].tolist(),
     }

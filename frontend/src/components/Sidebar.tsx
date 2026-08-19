@@ -19,7 +19,7 @@ interface SidebarProps {
   onRefresh: () => void;
 }
 
-const API_BASE = 'http://localhost:8000';
+import { API_BASE } from '../config';
 
 const Sidebar: React.FC<SidebarProps> = ({ 
   currentIndustry, 
@@ -64,7 +64,7 @@ const Sidebar: React.FC<SidebarProps> = ({
   return (
     <aside className="sidebar glass">
       <div className="sidebar-logo">
-        <div className="logo-icon">🔗</div>
+        <img src="/logo.png" alt="ChainMind Logo" className="logo-img" style={{ width: 36, height: 36, objectFit: 'contain' }} />
         <span className="logo-text">ChainMind</span>
       </div>
 

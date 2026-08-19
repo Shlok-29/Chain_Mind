@@ -22,7 +22,6 @@ ChainMind is an intelligent platform built for operations managers and executive
 ### Backend & AI
 - **API Framework**: [FastAPI](https://fastapi.tiangolo.com/) (Python)
 - **Agent Orchestration**: [CrewAI](https://www.crewai.com/)
-- **Dashboard (Admin)**: [Streamlit](https://streamlit.io/)
 - **Data Processing**: [Pandas](https://pandas.pydata.org/), [NumPy](https://numpy.org/)
 - **Machine Learning**: [Scikit-learn](https://scikit-learn.org/)
 - **Data Generation**: [Faker](https://faker.readthedocs.io/)
@@ -35,7 +34,6 @@ ChainMind is an intelligent platform built for operations managers and executive
 ```text
 chainmind/
 ├── agents.py           # CrewAI multi-agent pipeline and agent roles
-├── app.py              # Executive Streamlit dashboard
 ├── forecaster.py       # ML demand forecasting engine
 ├── generate_data.py    # Synthetic dataset generator
 ├── server.py           # FastAPI backend serving the React frontend
@@ -65,7 +63,7 @@ ChainMind operates on a "Sense-Think-Act" loop. It **Senses** the current state 
 - **Predictive Analytics**: 30-day demand projections at the SKU level using historical trend analysis.
 - **Autonomous Procurement**: Automatic generation of Purchase Orders based on dynamic reorder points.
 - **Disruption Simulation**: Live simulation of "Black Swan" events (floods, strikes) to test supply chain resilience.
-- **Dual Interface**: A high-performance React frontend for daily ops and an admin-friendly Streamlit dashboard for data exploration.
+- **Web Interface**: A high-performance React + TypeScript frontend built for operations and analytics.
 
 ### Software Workflow
 1.  **Data Initialization**: Realistic synthetic data is generated to simulate an active supply chain environment.
