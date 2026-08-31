@@ -109,8 +109,10 @@ const App: React.FC = () => {
       <footer className="app-footer">
         <div className="footer-content">
           <span>CHAINMIND AUTONOMOUS ORCHESTRATOR v2.4</span>
-          <span>SYSTEM STATUS: OPTIMAL</span>
-          <span>SESSION: {userSession.user.name} ({userSession.user.role})</span>
+          <span className="footer-dot">•</span>
+          <span>SYSTEM STATUS: <strong className="text-mint">OPTIMAL</strong></span>
+          <span className="footer-dot">•</span>
+          <span>SESSION: <strong>{userSession.user.name}</strong> ({userSession.user.role})</span>
         </div>
       </footer>
     </div>
