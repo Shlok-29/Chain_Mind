@@ -143,21 +143,42 @@ const UserProfileModal: React.FC<UserProfileModalProps> = ({
           height: 100vh;
           background: rgba(0, 0, 0, 0.75);
           backdrop-filter: blur(8px);
+          -webkit-backdrop-filter: blur(8px);
           z-index: 2500;
           display: flex;
           align-items: center;
           justify-content: center;
           padding: 20px;
+          overflow-y: auto;
         }
 
         .profile-modal-card {
           width: 100%;
-          max-width: 480px;
+          max-width: 500px;
+          max-height: 85vh;
+          overflow-y: auto;
           padding: 28px;
           background: var(--bg-secondary);
           border: 1px solid var(--border-active);
           box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 229, 163, 0.08);
           position: relative;
+          border-radius: 16px;
+          scrollbar-width: thin;
+          scrollbar-color: var(--accent-mint) var(--bg-tertiary);
+        }
+
+        .profile-modal-card::-webkit-scrollbar {
+          width: 6px;
+        }
+
+        .profile-modal-card::-webkit-scrollbar-track {
+          background: var(--bg-tertiary);
+          border-radius: 4px;
+        }
+
+        .profile-modal-card::-webkit-scrollbar-thumb {
+          background: var(--accent-mint);
+          border-radius: 4px;
         }
 
         .profile-header {

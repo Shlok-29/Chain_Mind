@@ -584,19 +584,27 @@ const Navbar: React.FC<NavbarProps> = ({
           height: 100vh;
           background: rgba(0, 0, 0, 0.75);
           backdrop-filter: blur(8px);
+          -webkit-backdrop-filter: blur(8px);
           z-index: 2000;
           display: flex;
           align-items: flex-start;
           justify-content: center;
-          padding-top: 100px;
+          padding: 40px 20px;
+          overflow-y: auto;
         }
 
         .nl-modal-card {
           width: 600px;
+          max-width: 90vw;
+          max-height: 85vh;
+          overflow-y: auto;
           padding: 24px;
           background: var(--bg-secondary);
           border: 1px solid var(--border-active);
           box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+          border-radius: 16px;
+          scrollbar-width: thin;
+          scrollbar-color: var(--accent-mint) var(--bg-tertiary);
         }
 
         .modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }

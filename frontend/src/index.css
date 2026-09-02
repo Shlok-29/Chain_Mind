@@ -177,3 +177,31 @@ h1, h2, h3, h4, h5, h6 {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--text-muted);
 }
+
+/* Global Modal Scrolling & Viewport Responsiveness */
+.profile-modal-overlay,
+.nl-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 2500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+  overflow-y: auto;
+}
+
+.profile-modal-card,
+.nl-modal-card {
+  max-height: 85vh;
+  overflow-y: auto !important;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85), 0 0 30px rgba(0, 229, 163, 0.1);
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-mint) var(--bg-tertiary);
+}
