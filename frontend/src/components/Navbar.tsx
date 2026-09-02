@@ -17,7 +17,8 @@ import {
   MessageSquare,
   X,
   LogOut,
-  UserCheck
+  UserCheck,
+  ShieldCheck
 } from 'lucide-react';
 import axios from 'axios';
 
@@ -59,15 +60,23 @@ const Navbar: React.FC<NavbarProps> = ({
   const [loadingQuery, setLoadingQuery] = useState(false);
 
   const industries = ['Pharma', 'FMCG', 'Auto Parts', 'Retail'];
+  const role = userSession?.user?.role || 'operations_manager';
 
-  const tabs = [
-    { id: 'inventory', label: 'DASHBOARD', icon: <LayoutDashboard size={15} /> },
-    { id: 'agents', label: 'AGENT SWARM', icon: <Cpu size={15} /> },
-    { id: 'forecast', label: 'FORECAST', icon: <TrendingUp size={15} /> },
-    { id: 'orders', label: 'ORDERS', icon: <ClipboardList size={15} /> },
-    { id: 'disruptions', label: 'SIMULATIONS', icon: <AlertTriangle size={15} /> },
-    { id: 'about', label: 'ABOUT', icon: <Info size={15} /> },
+  const allTabs = [
+    { id: 'inventory', label: 'DASHBOARD', icon: <LayoutDashboard size={15} />, roles: ['super_admin', 'executive', 'operations_manager', 'warehouse_manager', 'demand_planner', 'auditor'] },
+    { id: 'agents', label: 'AGENT SWARM', icon: <Cpu size={15} />, roles: ['super_admin', 'operations_manager', 'auditor'] },
+    { id: 'forecast', label: 'FORECAST', icon: <TrendingUp size={15} />, roles: ['super_admin', 'executive', 'operations_manager', 'demand_planner', 'auditor'] },
+    { id: 'orders', label: 'ORDERS', icon: <ClipboardList size={15} />, roles: ['super_admin', 'executive', 'operations_manager', 'procurement_officer', 'supplier_manager', 'auditor'] },
+    { id: 'disruptions', label: 'SIMULATIONS', icon: <AlertTriangle size={15} />, roles: ['super_admin', 'executive', 'operations_manager', 'procurement_officer', 'supplier_manager', 'auditor'] },
+    { id: 'admin', label: role === 'auditor' ? 'AUDIT LOGS' : 'ADMIN CONSOLE', icon: <ShieldCheck size={15} />, roles: ['super_admin', 'auditor'] },
+    { id: 'about', label: 'ABOUT', icon: <Info size={15} />, roles: ['super_admin', 'executive', 'operations_manager', 'procurement_officer', 'warehouse_manager', 'demand_planner', 'supplier_manager', 'auditor'] },
   ];
+
+  const visibleTabs = allTabs.filter(t => t.roles.includes(role));
+
+  const canRunSwarm = ['super_admin', 'operations_manager'].includes(role);
+  const canSimulateDisruption = ['super_admin', 'operations_manager', 'supplier_manager'].includes(role);
+  const isIndustryLocked = ['procurement_officer', 'warehouse_manager', 'demand_planner'].includes(role);
 
   // Ctrl+K key binding for AI Search Box
   useEffect(() => {
@@ -110,8 +119,13 @@ const Navbar: React.FC<NavbarProps> = ({
   };
 
   const triggerDisruption = async () => {
+    if (!canSimulateDisruption) return;
     try {
-      await axios.post(`${API_BASE}/simulation/disruption`, { active: true });
+      await axios.post(
+        `${API_BASE}/simulation/disruption`,
+        { active: true },
+        { headers: { Authorization: `Bearer ${userSession?.token}` } }
+      );
       onRefresh();
     } catch (err) {
       console.error(err);
@@ -119,8 +133,13 @@ const Navbar: React.FC<NavbarProps> = ({
   };
 
   const resolveDisruption = async () => {
+    if (!canSimulateDisruption) return;
     try {
-      await axios.post(`${API_BASE}/simulation/disruption`, { active: false });
+      await axios.post(
+        `${API_BASE}/simulation/disruption`,
+        { active: false },
+        { headers: { Authorization: `Bearer ${userSession?.token}` } }
+      );
       onRefresh();
     } catch (err) {
       console.error(err);
@@ -133,7 +152,7 @@ const Navbar: React.FC<NavbarProps> = ({
       <div className="navbar-top-row">
         <div className="top-row-container">
           {/* Brand Logo & Security Badge */}
-          <div className="navbar-brand-group" onClick={() => onTabChange('inventory')}>
+          <div className="navbar-brand-group" onClick={() => onTabChange(visibleTabs[0]?.id || 'inventory')}>
             <img src="/logo.png" alt="ChainMind Logo" className="navbar-logo-img" />
             <div className="brand-text-col">
               <span className="brand-title">CHAINMIND</span>
@@ -151,16 +170,18 @@ const Navbar: React.FC<NavbarProps> = ({
           {/* Right Action Controls */}
           <div className="top-row-actions">
             {/* Industry Selector Dropdown */}
-            <div className="industry-dropdown-container">
+            <div className={`industry-dropdown-container ${isIndustryLocked ? 'locked' : ''}`}>
               <Building2 size={14} className="dropdown-icon" />
               <select
                 value={currentIndustry}
                 onChange={(e) => onIndustryChange(e.target.value)}
+                disabled={isIndustryLocked}
                 className="industry-select-input"
+                title={isIndustryLocked ? `Restricted to assigned industry: ${currentIndustry}` : "Switch Industry Sector"}
               >
                 {industries.map(ind => (
                   <option key={ind} value={ind}>
-                    {ind} Sector
+                    {ind} Sector {isIndustryLocked && ind === currentIndustry ? '(Assigned)' : ''}
                   </option>
                 ))}
               </select>
@@ -168,27 +189,31 @@ const Navbar: React.FC<NavbarProps> = ({
             </div>
 
             {/* Disruption Trigger Action */}
-            {!disruptionActive ? (
-              <button className="btn btn-secondary btn-sm" onClick={triggerDisruption} title="Simulate Disruption">
-                <Zap size={14} />
-                <span>Simulate Disruption</span>
-              </button>
-            ) : (
-              <button className="btn btn-mint btn-sm" onClick={resolveDisruption} title={disruptionType}>
-                <CheckCircle2 size={14} />
-                <span>Resolve Disruption</span>
-              </button>
+            {canSimulateDisruption && (
+              !disruptionActive ? (
+                <button className="btn btn-secondary btn-sm" onClick={triggerDisruption} title="Simulate Disruption">
+                  <Zap size={14} />
+                  <span>Simulate Disruption</span>
+                </button>
+              ) : (
+                <button className="btn btn-mint btn-sm" onClick={resolveDisruption} title={disruptionType}>
+                  <CheckCircle2 size={14} />
+                  <span>Resolve Disruption</span>
+                </button>
+              )
             )}
 
             {/* Run Agent Swarm Button */}
-            <button
-              className={`btn btn-primary btn-sm ${agentRunning ? 'running' : ''}`}
-              onClick={onRunAgents}
-              disabled={agentRunning}
-            >
-              {agentRunning ? <RefreshCw className="spin" size={14} /> : <Play size={14} />}
-              <span>{agentRunning ? 'SWARM SYNCING' : 'RUN SWARM'}</span>
-            </button>
+            {canRunSwarm && (
+              <button
+                className={`btn btn-primary btn-sm ${agentRunning ? 'running' : ''}`}
+                onClick={onRunAgents}
+                disabled={agentRunning}
+              >
+                {agentRunning ? <RefreshCw className="spin" size={14} /> : <Play size={14} />}
+                <span>{agentRunning ? 'SWARM SYNCING' : 'RUN SWARM'}</span>
+              </button>
+            )}
 
             {/* System Status Pill */}
             <div className={`status-pill-badge ${disruptionActive ? 'disrupted' : 'optimal'}`}>
@@ -221,7 +246,7 @@ const Navbar: React.FC<NavbarProps> = ({
       <div className="navbar-bottom-row">
         <div className="bottom-row-container">
           <nav className="navbar-tabs-full">
-            {tabs.map(tab => (
+            {visibleTabs.map(tab => (
               <button
                 key={tab.id}
                 className={`nav-tab-btn-lg ${activeTab === tab.id ? 'active' : ''}`}

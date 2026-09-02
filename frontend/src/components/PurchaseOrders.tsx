@@ -1,35 +1,94 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { ShoppingCart, CheckCircle2, Clock, ExternalLink, RefreshCw, Play, Send } from 'lucide-react';
+import { ShoppingCart, CheckCircle2, Clock, ExternalLink, RefreshCw, Play, Send, Plus, Lock } from 'lucide-react';
+import { API_BASE } from '../config';
 
 interface PurchaseOrdersProps {
   industry: string;
   results: any;
   onRunAgents?: () => void;
   agentRunning?: boolean;
+  userSession?: any;
 }
 
-import { API_BASE } from '../config';
-
-const PurchaseOrders: React.FC<PurchaseOrdersProps> = ({ industry, results, onRunAgents, agentRunning }) => {
+const PurchaseOrders: React.FC<PurchaseOrdersProps> = ({ 
+  industry, 
+  results, 
+  onRunAgents, 
+  agentRunning,
+  userSession 
+}) => {
   const [historicalOrders, setHistoricalOrders] = useState<any[]>([]);
   const [approvedPOs, setApprovedPOs] = useState<Record<string, boolean>>({});
   const [whatsappSent, setWhatsappSent] = useState<Record<string, boolean>>({});
 
-  useEffect(() => {
-    const fetchOrders = async () => {
-      try {
-        const res = await axios.get(`${API_BASE}/data/orders?industry=${industry}`);
-        setHistoricalOrders(res.data);
-      } catch (err) {
-        console.error(err);
-      }
-    };
-    fetchOrders();
-  }, [industry]);
+  // Manual PO Create Modal
+  const [isCreatePoOpen, setIsCreatePoOpen] = useState(false);
+  const [poProductName, setPoProductName] = useState('');
+  const [poSupplier, setPoSupplier] = useState('MediChem Pvt Ltd');
+  const [poQty, setPoQty] = useState(100);
+  const [poUnitCost, setPoUnitCost] = useState(150);
 
-  const handleApprovePO = (poNumber: string) => {
-    setApprovedPOs(prev => ({ ...prev, [poNumber]: true }));
+  const role = userSession?.user?.role || 'operations_manager';
+  const canCreatePO = ['super_admin', 'operations_manager', 'procurement_officer'].includes(role);
+
+  const authHeader = {
+    headers: { Authorization: `Bearer ${userSession?.token}` }
+  };
+
+  const fetchOrders = async () => {
+    try {
+      const res = await axios.get(`${API_BASE}/data/orders?industry=${industry}`, authHeader);
+      setHistoricalOrders(res.data);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  useEffect(() => {
+    fetchOrders();
+  }, [industry, userSession]);
+
+  const handleApprovePO = async (poNumber: string, _poValue?: number) => {
+    try {
+      await axios.post(`${API_BASE}/api/orders/${poNumber}/approve`, {}, authHeader);
+      setApprovedPOs(prev => ({ ...prev, [poNumber]: true }));
+    } catch (err: any) {
+      console.error(err);
+      alert(err.response?.data?.detail || 'Failed to approve purchase order');
+    }
+  };
+
+  const handleCreateManualPO = async (e: React.FormEvent) => {
+    e.preventDefault();
+    try {
+      const res = await axios.post(`${API_BASE}/api/orders/create`, {
+        sku: 'SKU-MANUAL',
+        product_name: poProductName,
+        supplier: poSupplier,
+        quantity: poQty,
+        unit_cost: poUnitCost,
+        industry: industry,
+        warehouse: userSession?.user?.warehouse || 'Mumbai Central'
+      }, authHeader);
+
+      const newPo = {
+        po_number: res.data.po_number,
+        product_name: res.data.product_name,
+        supplier: res.data.supplier,
+        quantity: res.data.quantity,
+        total_value: res.data.total_value,
+        status: 'PENDING_APPROVAL',
+        warehouse: res.data.warehouse
+      };
+
+      setHistoricalOrders(prev => [newPo, ...prev]);
+      setIsCreatePoOpen(false);
+      setPoProductName('');
+    } catch (err: any) {
+      console.error(err);
+      alert(err.response?.data?.detail || 'Failed to create PO');
+    }
   };
 
   const handleSendWhatsApp = async (po: any) => {
@@ -37,7 +96,7 @@ const PurchaseOrders: React.FC<PurchaseOrdersProps> = ({ industry, results, onRu
       await axios.post(`${API_BASE}/api/alerts/whatsapp`, {
         phone_number: "+91 9876543210",
         sku: po.product_name,
-        message: `PO Alert (${po.po_number}): ${po.product_name} - Qty: ${po.qty}, Value: ₹${po.value.toLocaleString()}. Requires sign-off.`
+        message: `PO Alert (${po.po_number}): ${po.product_name} - Qty: ${po.qty || po.quantity}, Value: ₹${(po.value || po.total_value).toLocaleString()}. Requires sign-off.`
       });
       setWhatsappSent(prev => ({ ...prev, [po.po_number]: true }));
     } catch (err) {
@@ -54,6 +113,22 @@ const PurchaseOrders: React.FC<PurchaseOrdersProps> = ({ industry, results, onRu
     return { label: 'TIER 3 • EXECUTIVE / VP APPROVAL', color: 'var(--purple)', class: 'tier-3' };
   };
 
+  // Check if role can approve a specific PO value
+  const getApprovalPermission = (poValue: number) => {
+    if (['super_admin', 'operations_manager'].includes(role)) {
+      return { allowed: true, tooltip: 'Approve PO' };
+    }
+    if (role === 'executive') {
+      if (poValue > 50000) return { allowed: true, tooltip: 'Approve Executive Tier PO' };
+      return { allowed: false, tooltip: 'Executives approve POs above ₹50,000 only' };
+    }
+    if (role === 'procurement_officer') {
+      if (poValue <= 50000) return { allowed: true, tooltip: 'Approve PO' };
+      return { allowed: false, tooltip: 'Requires Operations Manager approval' };
+    }
+    return { allowed: false, tooltip: 'No approval permissions for your role' };
+  };
+
   return (
     <div className="orders-page">
       {/* Title Header */}
@@ -61,8 +136,19 @@ const PurchaseOrders: React.FC<PurchaseOrdersProps> = ({ industry, results, onRu
         <div className="banner-tag">
           <span className="dot"></span> AUTONOMOUS PROCUREMENT & 3-TIER GOVERNANCE
         </div>
-        <h1>Purchase Orders Command</h1>
-        <p className="page-subtitle">Auto-generated purchase orders with 3-tier financial approval governance and WhatsApp dispatch capabilities.</p>
+        <div className="banner-flex-row" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <div>
+            <h1>Purchase Orders Command</h1>
+            <p className="page-subtitle">Auto-generated purchase orders with 3-tier financial approval governance and role permissions.</p>
+          </div>
+
+          {canCreatePO && (
+            <button className="btn btn-primary" onClick={() => setIsCreatePoOpen(true)}>
+              <Plus size={16} />
+              <span>Create PO Manually</span>
+            </button>
+          )}
+        </div>
       </div>
 
       <div className="section-header">
@@ -88,6 +174,7 @@ const PurchaseOrders: React.FC<PurchaseOrdersProps> = ({ industry, results, onRu
               const isApproved = po.auto_approved || approvedPOs[po.po_number];
               const tier = getTierInfo(po.value);
               const waSent = whatsappSent[po.po_number];
+              const perm = getApprovalPermission(po.value);
 
               return (
                 <div key={idx} className="glass po-card">
@@ -135,10 +222,13 @@ const PurchaseOrders: React.FC<PurchaseOrdersProps> = ({ industry, results, onRu
                       </div>
                     ) : (
                       <button 
-                        className="btn btn-secondary btn-sm"
-                        onClick={() => handleApprovePO(po.po_number)}
+                        className={`btn btn-secondary btn-sm ${!perm.allowed ? 'btn-disabled-locked' : ''}`}
+                        onClick={() => perm.allowed && handleApprovePO(po.po_number, po.value)}
+                        disabled={!perm.allowed}
+                        title={perm.tooltip}
                       >
-                        {po.value > 500000 ? 'VP Multi-Factor Sign-off' : 'Manager Sign-off'}
+                        {!perm.allowed && <Lock size={12} className="mr-4" />}
+                        <span>{perm.allowed ? (po.value > 500000 ? 'VP Multi-Factor Sign-off' : 'Approve PO') : perm.tooltip}</span>
                       </button>
                     )}
                   </div>
@@ -150,14 +240,16 @@ const PurchaseOrders: React.FC<PurchaseOrdersProps> = ({ industry, results, onRu
       ) : (
         <div className="glass empty-state">
           <p>No new purchase orders generated in the current cycle.</p>
-          <button 
-            className="btn btn-primary btn-sm" 
-            onClick={onRunAgents}
-            disabled={agentRunning}
-          >
-            {agentRunning ? <RefreshCw className="spin" size={14} /> : <Play size={14} />}
-            <span>{agentRunning ? 'Running Swarm...' : 'Run Swarm Pipeline'}</span>
-          </button>
+          {['super_admin', 'operations_manager'].includes(role) && onRunAgents && (
+            <button 
+              className="btn btn-primary btn-sm" 
+              onClick={onRunAgents}
+              disabled={agentRunning}
+            >
+              {agentRunning ? <RefreshCw className="spin" size={14} /> : <Play size={14} />}
+              <span>{agentRunning ? 'Running Swarm...' : 'Run Swarm Pipeline'}</span>
+            </button>
+          )}
         </div>
       )}
 
@@ -203,7 +295,80 @@ const PurchaseOrders: React.FC<PurchaseOrdersProps> = ({ industry, results, onRu
         </table>
       </div>
 
+      {/* MANUAL PO CREATION MODAL */}
+      {isCreatePoOpen && (
+        <div className="nl-modal-overlay" onClick={() => setIsCreatePoOpen(false)}>
+          <div className="glass nl-modal-card" onClick={e => e.stopPropagation()}>
+            <div className="modal-header">
+              <h3>Create Purchase Order Manually</h3>
+            </div>
+            <form onSubmit={handleCreateManualPO} className="auth-form mt-16">
+              <div className="input-field-group">
+                <label>PRODUCT NAME</label>
+                <input 
+                  type="text" 
+                  value={poProductName} 
+                  onChange={e => setPoProductName(e.target.value)} 
+                  placeholder="e.g. Paracetamol 500mg Raw Material" 
+                  required 
+                />
+              </div>
+
+              <div className="input-field-group">
+                <label>PREFERRED SUPPLIER</label>
+                <select value={poSupplier} onChange={e => setPoSupplier(e.target.value)}>
+                  <option value="MediChem Pvt Ltd">MediChem Pvt Ltd</option>
+                  <option value="PharmaSynth India">PharmaSynth India</option>
+                  <option value="GlobalMed Suppliers">GlobalMed Suppliers</option>
+                  <option value="HUL Distribution">HUL Distribution</option>
+                  <option value="Bosch Auto Parts">Bosch Auto Parts</option>
+                </select>
+              </div>
+
+              <div className="input-grid-row">
+                <div className="input-field-group">
+                  <label>QUANTITY (UNITS)</label>
+                  <input 
+                    type="number" 
+                    value={poQty} 
+                    onChange={e => setPoQty(parseInt(e.target.value) || 0)} 
+                    required 
+                  />
+                </div>
+                <div className="input-field-group">
+                  <label>UNIT COST (₹)</label>
+                  <input 
+                    type="number" 
+                    value={poUnitCost} 
+                    onChange={e => setPoUnitCost(parseFloat(e.target.value) || 0)} 
+                    required 
+                  />
+                </div>
+              </div>
+
+              <div className="summary-item mt-12" style={{ padding: '10px 14px', background: 'rgba(0, 229, 163, 0.08)', borderRadius: '6px' }}>
+                <span className="label" style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>Estimated Total Value:</span>
+                <span className="value text-mint font-mono font-bold" style={{ marginLeft: '8px' }}>₹{(poQty * poUnitCost).toLocaleString()}</span>
+              </div>
+
+              <div className="modal-actions-row" style={{ display: 'flex', justifyContent: 'flex-end', gap: '12px', marginTop: '16px' }}>
+                <button type="button" className="btn btn-secondary" onClick={() => setIsCreatePoOpen(false)}>Cancel</button>
+                <button type="submit" className="btn btn-primary">Generate PO</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
+
       <style>{`
+        .btn-disabled-locked {
+          opacity: 0.5;
+          cursor: not-allowed !important;
+          background: rgba(255, 255, 255, 0.05) !important;
+          border-color: rgba(255, 255, 255, 0.15) !important;
+          color: var(--text-muted) !important;
+        }
+
         .orders-page {
           display: flex;
           flex-direction: column;

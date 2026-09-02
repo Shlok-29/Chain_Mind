@@ -8,7 +8,6 @@ import {
   Eye, 
   EyeOff, 
   ArrowRight, 
-  Sparkles,
   Bot
 } from 'lucide-react';
 import axios from 'axios';
@@ -68,28 +67,31 @@ const Auth: React.FC<AuthProps> = ({ onLoginSuccess }) => {
     }
   };
 
-  const handleDemoLogin = async () => {
+  const handleRoleQuickLogin = async (roleEmail: string) => {
     try {
       setLoading(true);
       const res = await axios.post(`${API_BASE}/api/auth/login`, {
-        email: 'executive@chainmind.ai',
-        password: 'admin'
+        email: roleEmail,
+        password: 'chainmind2026'
       });
       onLoginSuccess(res.data);
     } catch (err) {
       console.error(err);
-      // Fallback demo session if offline
-      onLoginSuccess({
-        token: 'demo_token_123',
-        user: {
-          name: 'Alex Mercer',
-          email: 'executive@chainmind.ai',
-          role: 'Supply Chain VP',
-          industry: 'Pharma'
-        }
-      });
+      setError("Demo login failed. Server connection error.");
+      setLoading(false);
     }
   };
+
+  const demoRoles = [
+    { title: 'ROLE 1: Super Admin', email: 'superadmin@chainmind.ai', color: '#c084fc' },
+    { title: 'ROLE 2: Executive', email: 'executive@chainmind.ai', color: '#60a5fa' },
+    { title: 'ROLE 3: Operations Manager', email: 'opsmanager@chainmind.ai', color: '#34d399' },
+    { title: 'ROLE 4: Procurement Officer', email: 'procurement@chainmind.ai', color: '#fbbf24' },
+    { title: 'ROLE 5: Warehouse Manager', email: 'warehouse@chainmind.ai', color: '#f472b6' },
+    { title: 'ROLE 6: Demand Planner', email: 'demand@chainmind.ai', color: '#38bdf8' },
+    { title: 'ROLE 7: Supplier Manager', email: 'supplier@chainmind.ai', color: '#a78bfa' },
+    { title: 'ROLE 8: Auditor', email: 'auditor@chainmind.ai', color: '#fde047' },
+  ];
 
   return (
     <div className="auth-gateway-container">
@@ -190,10 +192,14 @@ const Auth: React.FC<AuthProps> = ({ onLoginSuccess }) => {
                 <div className="input-wrapper">
                   <Bot size={16} className="input-icon" />
                   <select value={role} onChange={e => setRole(e.target.value)}>
-                    <option value="Supply Chain Director">Supply Chain Director</option>
-                    <option value="Operations Manager">Operations Manager</option>
-                    <option value="Procurement Specialist">Procurement Specialist</option>
-                    <option value="Logistics VP">Logistics VP</option>
+                    <option value="super_admin">ROLE 1: Super Admin</option>
+                    <option value="executive">ROLE 2: Executive</option>
+                    <option value="operations_manager">ROLE 3: Operations Manager</option>
+                    <option value="procurement_officer">ROLE 4: Procurement Officer</option>
+                    <option value="warehouse_manager">ROLE 5: Warehouse Manager</option>
+                    <option value="demand_planner">ROLE 6: Demand Planner</option>
+                    <option value="supplier_manager">ROLE 7: Supplier Manager</option>
+                    <option value="auditor">ROLE 8: Auditor</option>
                   </select>
                 </div>
               </div>
@@ -219,15 +225,25 @@ const Auth: React.FC<AuthProps> = ({ onLoginSuccess }) => {
           </button>
         </form>
 
-        {/* Quick Demo Login Shortcut */}
+        {/* Quick Demo Login 8-Role Shortcuts */}
         <div className="demo-login-divider">
-          <span>OR QUICK ACCESS</span>
+          <span>QUICK 1-CLICK DEMO ROLES</span>
         </div>
 
-        <button type="button" className="btn btn-secondary btn-block btn-demo" onClick={handleDemoLogin}>
-          <Sparkles size={16} className="text-mint" />
-          <span>Demo Executive Login (1-Click Preview)</span>
-        </button>
+        <div className="demo-roles-grid">
+          {demoRoles.map(dr => (
+            <button 
+              key={dr.email}
+              type="button" 
+              className="btn btn-secondary btn-sm btn-role-shortcut" 
+              onClick={() => handleRoleQuickLogin(dr.email)}
+              style={{ borderColor: dr.color }}
+            >
+              <span className="role-dot" style={{ background: dr.color }}></span>
+              <span className="role-shortcut-title">{dr.title}</span>
+            </button>
+          ))}
+        </div>
       </div>
 
       <style>{`
@@ -445,6 +461,46 @@ const Auth: React.FC<AuthProps> = ({ onLoginSuccess }) => {
 
         .demo-login-divider span {
           padding: 0 10px;
+        }
+
+        .demo-roles-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 8px;
+        }
+
+        .btn-role-shortcut {
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          padding: 8px 10px;
+          background: rgba(255, 255, 255, 0.03);
+          border: 1px solid rgba(255, 255, 255, 0.15);
+          border-radius: 6px;
+          font-size: 0.72rem;
+          color: white;
+          cursor: pointer;
+          transition: all 0.2s ease;
+          text-align: left;
+        }
+
+        .btn-role-shortcut:hover {
+          background: rgba(255, 255, 255, 0.08);
+          transform: translateY(-1px);
+        }
+
+        .role-dot {
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          flex-shrink: 0;
+        }
+
+        .role-shortcut-title {
+          font-weight: 600;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
         }
 
         .btn-demo {

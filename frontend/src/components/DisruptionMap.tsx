@@ -21,28 +21,61 @@ interface DisruptionMapProps {
   industry: string;
   disruptionActive: boolean;
   disruptionType: string;
+  userSession?: any;
 }
 
 import { API_BASE } from '../config';
 
-const DisruptionMap: React.FC<DisruptionMapProps> = ({ industry, disruptionActive, disruptionType }) => {
+const DisruptionMap: React.FC<DisruptionMapProps> = ({ 
+  industry, 
+  disruptionActive, 
+  disruptionType,
+  userSession 
+}) => {
   const [suppliers, setSuppliers] = useState<any[]>([]);
   const [selectedEvent, setSelectedEvent] = useState('Port Strike');
   const [selectedRegion, setSelectedRegion] = useState('Southeast Asia Ports');
   const [durationDays, setDurationDays] = useState(14);
   const [allowRerouting, setAllowRerouting] = useState(true);
 
+  // Edit reliability modal
+  const [editingSupplier, setEditingSupplier] = useState<any>(null);
+  const [newScore, setNewScore] = useState<number>(85);
+
+  const role = userSession?.user?.role || 'operations_manager';
+  const canEditReliability = ['super_admin', 'supplier_manager'].includes(role);
+  const authHeader = {
+    headers: { Authorization: `Bearer ${userSession?.token}` }
+  };
+
+  const fetchSuppliers = async () => {
+    try {
+      const res = await axios.get(`${API_BASE}/data/suppliers?industry=${industry}`, authHeader);
+      setSuppliers(res.data);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
   useEffect(() => {
-    const fetchSuppliers = async () => {
-      try {
-        const res = await axios.get(`${API_BASE}/data/suppliers?industry=${industry}`);
-        setSuppliers(res.data);
-      } catch (err) {
-        console.error(err);
-      }
-    };
     fetchSuppliers();
-  }, [industry]);
+  }, [industry, userSession]);
+
+  const handleSaveReliability = async () => {
+    if (!editingSupplier) return;
+    try {
+      await axios.put(
+        `${API_BASE}/api/suppliers/${editingSupplier.supplier}/reliability`,
+        { reliability_score: newScore / 100 },
+        authHeader
+      );
+      setEditingSupplier(null);
+      fetchSuppliers();
+    } catch (err: any) {
+      console.error(err);
+      alert(err.response?.data?.detail || 'Failed to update supplier reliability score');
+    }
+  };
 
   const reliabilityData = suppliers.map(s => ({
     name: s.supplier,
@@ -208,6 +241,19 @@ const DisruptionMap: React.FC<DisruptionMapProps> = ({ industry, disruptionActiv
                     <div className="match-fill" style={{ width: `${Math.round(sup.reliability_score * 100)}%` }}></div>
                   </div>
                   <span className="capacity-lbl">CAPACITY: {Math.round(sup.reliability_score * 100)}% MATCH</span>
+
+                  {canEditReliability && (
+                    <button 
+                      className="btn btn-secondary btn-sm mt-8" 
+                      style={{ fontSize: '0.7rem', width: '100%', justifyContent: 'center', marginTop: '8px' }}
+                      onClick={() => {
+                        setEditingSupplier(sup);
+                        setNewScore(Math.round((sup.reliability_score || 0.8) * 100));
+                      }}
+                    >
+                      Edit Reliability Score
+                    </button>
+                  )}
                 </div>
               ))}
             </div>
@@ -235,6 +281,45 @@ const DisruptionMap: React.FC<DisruptionMapProps> = ({ industry, disruptionActiv
           </BarChart>
         </ResponsiveContainer>
       </div>
+
+      {/* EDIT RELIABILITY MODAL */}
+      {editingSupplier && (
+        <div className="nl-modal-overlay" onClick={() => setEditingSupplier(null)}>
+          <div className="glass nl-modal-card" onClick={e => e.stopPropagation()}>
+            <div className="modal-header">
+              <h3>Edit Supplier Reliability Score ({editingSupplier.supplier})</h3>
+            </div>
+            <div className="auth-form mt-16">
+              <div className="input-field-group">
+                <label>RELIABILITY SCORE (%)</label>
+                <input 
+                  type="number" 
+                  min="0" 
+                  max="100" 
+                  value={newScore} 
+                  onChange={e => setNewScore(Number(e.target.value))} 
+                />
+              </div>
+
+              <div className="slider-group mt-12">
+                <input 
+                  type="range" 
+                  min="0" 
+                  max="100" 
+                  value={newScore} 
+                  onChange={e => setNewScore(Number(e.target.value))}
+                  className="duration-range-slider"
+                />
+              </div>
+
+              <div className="modal-actions-row" style={{ display: 'flex', justifyContent: 'flex-end', gap: '12px', marginTop: '16px' }}>
+                <button type="button" className="btn btn-secondary" onClick={() => setEditingSupplier(null)}>Cancel</button>
+                <button type="button" className="btn btn-primary" onClick={handleSaveReliability}>Save Score</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       <style>{`
         .simulations-page {
