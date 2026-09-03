@@ -170,6 +170,14 @@ class DatabaseManager:
         # Fallback to local SQLite database engine
         try:
             sqlite_db_path = os.path.join(os.path.dirname(__file__), "chainmind.db")
+            try:
+                test_p = os.path.join(os.path.dirname(__file__), ".db_write_test")
+                with open(test_p, "w") as f:
+                    f.write("ok")
+                os.remove(test_p)
+            except Exception:
+                sqlite_db_path = "/tmp/chainmind.db"
+
             self.engine = create_engine(
                 f"sqlite:///{sqlite_db_path}",
                 connect_args={"check_same_thread": False}
